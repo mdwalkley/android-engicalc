@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="8dp"
+    android:background="@color/colorPrimary"
+    android:elevation="8dp">
+
+    <TextView
+        android:id="@+id/elGroup_MainActivity_Label"
+        android:layout_width="match_parent"
+        android:layout_height="?android:listPreferredItemHeight"
+        android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
+        android:textSize="26sp"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorTextWhite"
+        tools:text="Simple Beam"
+        />
+
+</android.support.constraint.ConstraintLayout>
