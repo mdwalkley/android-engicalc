@@ -57,7 +57,7 @@ public class SimpleBeamUDL extends AppCompatActivity {
 
         try{
             i = Double.valueOf(((EditText)findViewById(R.id.input_i)).getText().toString());
-            e = Double.valueOf(((EditText)findViewById(R.id.input_e)).getText().toString());
+            e = Double.valueOf(((EditText)findViewById(R.id.input_E)).getText().toString());
             double ei= e*i;
 
             ((TextView)findViewById(R.id.answer5)).setText(Double.toString(equation5(w,l,x,ei)));

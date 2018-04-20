@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="us.walkley.mw.engicalc.SimpleBeamCLAP">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/background_light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <!--P-->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout_P"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/textView_P"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="P"
+                    android:textSize="26sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_PEq"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textView_PEq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" = "
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView_P"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/input_P"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:hint="P"
+                    android:inputType="numberDecimal"
+                    android:nextFocusDown="@id/input_a"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_PEq"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView_PEq" />
+            </android.support.constraint.ConstraintLayout>
+            <!--a-->
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/textView_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="a"
+                    android:textSize="26sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_aEq"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView_aEq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" = "
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView_a"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/input_a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:hint="a"
+                    android:inputType="numberDecimal"
+                    android:nextFocusDown="@id/input_b"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_aEq"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView_aEq" />
+            </android.support.constraint.ConstraintLayout>
+            <!--b-->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout_b"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/textView_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="b"
+                    android:textSize="26sp"
+                    android:textStyle="italic"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_bEq"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView_bEq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" = "
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView_b"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/input_b"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:hint="b"
+                    android:inputType="numberDecimal"
+                    android:nextFocusDown="@id/input_x"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_bEq"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView_bEq" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="horizontal">
+            <!--x-->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout_x"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/textView_x"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="cursive"
+                    android:text="x"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_xEq"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView_xEq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="21dp"
+                    android:text=" = "
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView_x"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/input_x"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:hint="x"
+                    android:inputType="numberDecimal"
+                    android:nextFocusDown="@id/input_ei"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_xEq"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView_xEq" />
+
+            </android.support.constraint.ConstraintLayout>
+            <!--E-->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout_E"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/textView_E"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="E"
+                    android:textSize="26sp"
+                    android:typeface="serif"
+                    app:layout_constraintBaseline_toBaselineOf="@id/textView_EEq"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView_EEq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" = "
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView_E"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/input_E"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:hint="E"
+                    android:inputType="numberDecimal"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_EEq"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView_EEq" />
+            </android.support.constraint.ConstraintLayout>
+            <!--I-->
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout_i"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/textView_i"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="I"
+                    android:textSize="26sp"
+                    android:typeface="serif"
+                    app:layout_constraintBaseline_toBaselineOf="@id/textView_iEq"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/textView_iEq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" = "
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView_i"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/input_i"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:hint="I"
+                    android:inputType="numberDecimal"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_iEq"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView_iEq" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+        <!--Button-->
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/calculate_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calculate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <!--Answers-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="6"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:src="@drawable/sbudl_1" />
+
+                    <TextView
+                        android:id="@+id/answer1"
+                        style="@style/AnswerTextView" />
+                </LinearLayout>
+                <View style="@style/VerticalSeparator_1dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="8dp"/>
+                <LinearLayout
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:src="@drawable/sbudl_1" />
+
+                    <TextView
+                        android:id="@+id/answer2"
+                        style="@style/AnswerTextView" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/HorizontalSeparator_1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:src="@drawable/sbudl_1" />
+
+                    <TextView
+                        android:id="@+id/answer3"
+                        style="@style/AnswerTextView" />
+                </LinearLayout>
+                <View style="@style/VerticalSeparator_1dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="8dp"/>
+                <LinearLayout
+                    android:layout_width="0px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:src="@drawable/sbudl_1" />
+
+                    <TextView
+                        android:id="@+id/answer4"
+                        style="@style/AnswerTextView" />
+                </LinearLayout>
+            </LinearLayout>
+            <View style="@style/HorizontalSeparator_1dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:src="@drawable/sbudl_1" />
+
+                <TextView
+                    android:id="@+id/answer_5"
+                    style="@style/AnswerTextView" />
+            </LinearLayout>
+
+            <View style="@style/HorizontalSeparator_1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:src="@drawable/sbudl_1" />
+
+                <TextView
+                    android:id="@+id/answer6"
+                    style="@style/AnswerTextView" />
+            </LinearLayout>
+
+            <View style="@style/HorizontalSeparator_1dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1">
+
+                <ImageView
+                    style="@style/AnswerImageView"
+                    android:src="@drawable/simplebeam_udl_equation05" />
+
+                <TextView
+                    android:id="@+id/answer7"
+                    style="@style/AnswerTextView" />
+            </LinearLayout>
+            <View style="@style/HorizontalSeparator_1dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/sbudl_1" />
+
+                <TextView
+                    android:id="@+id/answer8"
+                    style="@style/AnswerTextView" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
