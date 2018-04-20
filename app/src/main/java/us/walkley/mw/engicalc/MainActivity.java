@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                     case 0: //Simple Beam
                         switch(i1){ //i1 = child
                             case 0: //Uniformly Distributed Load
-                                //intent = new Intent(MainActivity.this, simpleBeamUDL.class);
+                                intent = new Intent(MainActivity.this, SimpleBeamUDL.class);
                                 break;
                             case 1: //Concentrated Load at Any Point
                                 //intent = new Intent(MainActivity.this, simpleBeamCLAP.class);

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">EngiCalc</string>
+    <string name="simpleBeamUDL_Title">Simple Beam Uniformly Distributed Load</string>
+    <string name="simpleBeamCLAP_Title">Simple Beam Concentrated Load at Any Point</string>
+    <string-array name="eValue_names">
+        <item>Wood</item>
+        <item>Steel</item>
+    </string-array>
+    <string name="sbUDL_eq2">V<sub>x</sub>=</string>
+    <string name="sbUDL_eq3">M<sub><small>max</small></sub>(at center)=</string>
+    <string name="sbUDL_eq5">(at center)</string>
 </resources>
