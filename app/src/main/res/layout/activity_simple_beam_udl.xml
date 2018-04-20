@@ -32,18 +32,18 @@
                     android:id="@+id/textView_w"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="cursive"
                     android:text="w"
                     android:textSize="26sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_wEq"
-                    app:layout_constraintEnd_toStartOf="@+id/textView_wEq" />
+                    android:fontFamily="cursive"
+                    android:typeStyle="bold"
+                    app:layout_constraintBaseline_toBaselineOf="@id/textView_wEq"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView_wEq"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="21dp"
                     android:text=" = "
                     android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -57,7 +57,7 @@
                     android:layout_marginEnd="8dp"
                     android:hint="weight"
                     android:inputType="numberDecimal"
-                    android:nextFocusDown="@id/input_l"
+                    android:nextFocusDown="@id/input_w"
                     app:layout_constraintBaseline_toBaselineOf="@+id/textView_wEq"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView_wEq" />
@@ -74,18 +74,19 @@
                     android:id="@+id/textView_l"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="cursive"
                     android:text="l "
                     android:textSize="26sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_lEq"
-                    app:layout_constraintEnd_toStartOf="@+id/textView_lEq" />
+                    android:fontFamily="cursive"
+                    android:typeStyle="bold"
+                    app:layout_constraintBaseline_toBaselineOf="@id/textView_lEq"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView_lEq"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" = "
+                    android:text="= "
                     android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView_l"
@@ -115,18 +116,18 @@
                     android:id="@+id/textView_x"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="cursive"
                     android:text="x"
                     android:textSize="26sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_xEq"
-                    app:layout_constraintEnd_toStartOf="@+id/textView_xEq" />
+                    android:fontFamily="cursive"
+                    android:typeStyle="bold"
+                    app:layout_constraintBaseline_toBaselineOf="@id/textView_xEq"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView_xEq"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="21dp"
                     android:text=" = "
                     android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -140,7 +141,7 @@
                     android:layout_marginEnd="8dp"
                     android:hint="x"
                     android:inputType="numberDecimal"
-                    android:nextFocusDown="@id/input_E"
+                    android:nextFocusDown="@id/input_x"
                     app:layout_constraintBaseline_toBaselineOf="@+id/textView_xEq"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView_xEq" />
@@ -212,8 +213,8 @@
                     android:textSize="26sp"
                     android:typeface="serif"
                     app:layout_constraintBaseline_toBaselineOf="@id/textView_iEq"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <TextView
                     android:id="@+id/textView_iEq"
