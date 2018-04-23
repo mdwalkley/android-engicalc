@@ -182,7 +182,7 @@
                     android:layout_marginEnd="8dp"
                     android:hint="x"
                     android:inputType="numberDecimal"
-                    android:nextFocusDown="@id/input_ei"
+                    android:nextFocusDown="@id/input_E"
                     app:layout_constraintBaseline_toBaselineOf="@+id/textView_xEq"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView_xEq" />
@@ -227,6 +227,17 @@
                     app:layout_constraintBaseline_toBaselineOf="@+id/textView_EEq"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView_EEq" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ic_search_black_24dp"
+                    android:translationX="3dp"
+                    app:layout_constraintEnd_toEndOf="@id/input_E"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:tint="@color/colorPrimaryLight"/>
+
             </android.support.constraint.ConstraintLayout>
             <!--I-->
             <android.support.constraint.ConstraintLayout

@@ -46,8 +46,8 @@ public class SimpleBeamCLAP extends AppCompatActivity {
         }
 
         try{
-            e = Double.valueOf(((EditText)findViewById(R.id.input_ei)).getText().toString());
-            i = Double.valueOf(((EditText)findViewById(R.id.input_ei)).getText().toString());
+            e = Double.valueOf(((EditText)findViewById(R.id.input_E)).getText().toString());
+            i = Double.valueOf(((EditText)findViewById(R.id.input_E)).getText().toString());
             double ei=e*i;
 
             ((TextView)findViewById(R.id.answer5)).setText(Double.toString(equation5(p, a, b, l, ei)));
