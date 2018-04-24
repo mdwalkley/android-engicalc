@@ -1,8 +1,11 @@
 package us.walkley.mw.engicalc;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatImageButton;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -18,25 +21,37 @@ public class SimpleBeamUDL extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_beam_udl); //getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        final Button calculate = (Button) findViewById(R.id.calculate_button);
-
-        calculate.setOnClickListener(new View.OnClickListener(){
+        //Set onclick listeners
+        //Calculate button
+        final Button calculateButton = (Button) findViewById(R.id.calculate_button);
+        calculateButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 calculateAll(view);
             }
         });
 
-        /*
-        Spinner spinner = (Spinner) findViewById(R.id.spinner_e);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.e_names, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
-        */
+        //ElasticityFragment button
+        AppCompatImageButton elasticityButton = (AppCompatImageButton) findViewById(R.id.search_button_E);
+        elasticityButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                // Show back button in Navigation Bar
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                //findViewById(R.id.constraintLayout_e).setVisibility(View.GONE);
+
+                //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
+                FragmentManager manager = getFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.elasticityFragment_Frame, new ElasticityFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+
+                //Intent eValueIntent = new Intent(MainActivity.this, EFragActivity.class);
+                //startActivity(eValueIntent);
+            }
+        });
+        
     }
 
     private void calculateAll(View view){
@@ -107,6 +122,10 @@ public class SimpleBeamUDL extends AppCompatActivity {
         }
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         view.clearFocus();
+    }
+
+    private void launchElasticityFragment(){
+
     }
 
 }

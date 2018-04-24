@@ -9,4 +9,7 @@
     <string name="sbUDL_eq2">V<sub>x</sub>=</string>
     <string name="sbUDL_eq3">M<sub><small>max</small></sub>(at center)=</string>
     <string name="sbUDL_eq5">(at center)</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
