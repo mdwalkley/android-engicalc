@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                                 intent = new Intent(MainActivity.this, SimpleBeamUDL.class);
                                 break;
                             case 1: //Concentrated Load at Any Point
-                                //intent = new Intent(MainActivity.this, simpleBeamCLAP.class);
+                                intent = new Intent(MainActivity.this, SimpleBeamCLAP.class);
                                 break;
                         }
                         break;
