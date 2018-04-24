@@ -58,22 +58,13 @@ public class ElasticityFragment extends Fragment {
                 EditText inputView = getActivity().findViewById(R.id.input_E);
                 // Set text in the EditText to the selected E Value
                 inputView.setText(Double.toString(eVal));
-                exitFragment();
+                getActivity().onBackPressed();
                 return false;
             }
 
         });
 
         return view;
-    }
-
-    private void exitFragment(){
-        // Make fragment view go away
-        getActivity().findViewById(R.id.elasticityFragment_Frame).setVisibility(View.GONE);
-        // Make activity view visible
-        getActivity().findViewById(R.id.parentLayout).setVisibility(View.VISIBLE);
-        // (pop off backStack)
-        getActivity().getFragmentManager().popBackStack();
     }
 
     private void populateList() {

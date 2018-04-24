@@ -36,22 +36,34 @@ public class SimpleBeamUDL extends AppCompatActivity {
         elasticityButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                // Show back button in Navigation Bar
-                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                //findViewById(R.id.constraintLayout_e).setVisibility(View.GONE);
-
-                //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
-                FragmentManager manager = getFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.elasticityFragment_Frame, new ElasticityFragment());
-                transaction.addToBackStack(null);
-                transaction.commit();
-
-                //Intent eValueIntent = new Intent(MainActivity.this, EFragActivity.class);
-                //startActivity(eValueIntent);
+                startFragment();
             }
         });
-        
+
+    }
+
+    @Override
+    public void onBackPressed(){
+        if(getFragmentManager().getBackStackEntryCount() == 0){
+            super.onBackPressed();
+        }else{
+            // Make fragment view go away
+            findViewById(R.id.elasticityFragment_Frame).setVisibility(View.GONE);
+            // Make activity view visible
+            findViewById(R.id.parentLayout).setVisibility(View.VISIBLE);
+            // (pop off backStack)
+            getFragmentManager().popBackStack();
+        }
+    }
+
+    private void startFragment(){
+        hideKeyboard(this);
+        //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
+        FragmentManager manager = getFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.elasticityFragment_Frame, new ElasticityFragment());
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     private void calculateAll(View view){
@@ -122,10 +134,6 @@ public class SimpleBeamUDL extends AppCompatActivity {
         }
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         view.clearFocus();
-    }
-
-    private void launchElasticityFragment(){
-
     }
 
 }

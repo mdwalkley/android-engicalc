@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 //TODO: Rename app: EngiCalc, Calcineer, Engilator, Abdaraxus, Harpalus...
+//TODO: Make abstract class for calculation activities
 
 public class MainActivity extends AppCompatActivity {
     ExpandableListAdapter listAdapter;

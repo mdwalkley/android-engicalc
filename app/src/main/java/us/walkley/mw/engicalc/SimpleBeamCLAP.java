@@ -1,8 +1,11 @@
 package us.walkley.mw.engicalc;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatImageButton;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -17,14 +20,48 @@ public class SimpleBeamCLAP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_beam_clap); //getActionBar().setDisplayHomeAsUpEnabled(true);
 
+        //Set Onclick Listeners
+        //Calculate button
         final Button calculate = (Button) findViewById(R.id.calculate_button);
-
         calculate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 calculateAll(view);
             }
         });
+
+        //ElasticityFragment button
+        AppCompatImageButton elasticityButton = (AppCompatImageButton) findViewById(R.id.search_button_E);
+        elasticityButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startFragment();
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed(){
+        if(getFragmentManager().getBackStackEntryCount() == 0){
+            super.onBackPressed();
+        }else{
+            // Make fragment view go away
+            findViewById(R.id.elasticityFragment_Frame).setVisibility(View.GONE);
+            // Make activity view visible
+            findViewById(R.id.parentLayout).setVisibility(View.VISIBLE);
+            // (pop off backStack)
+            getFragmentManager().popBackStack();
+        }
+    }
+
+    private void startFragment(){
+        hideKeyboard(this);
+        //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
+        FragmentManager manager = getFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.elasticityFragment_Frame, new ElasticityFragment());
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     private void calculateAll(View view){
