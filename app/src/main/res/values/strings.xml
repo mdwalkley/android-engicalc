@@ -6,9 +6,19 @@
         <item>Wood</item>
         <item>Steel</item>
     </string-array>
+    <!--
+    < = &#60;
+    > = &#62;
+    -->
+    <string name="atcenter">(at center)</string>
+    <string name="maxalessb">(max when a&#60;b)</string>
+    <string name="maxagreatb">(max when a&#62;b)</string>
+    <string name="atloadpoint">(at point of load)</string>
+    <string name="whenagreatb">(when a&#62;b)</string>
+    <string name="whenxlessa">(when x&#60;a)</string>
+    <string name="whenxgreata">(when x&#62;a)</string>
     <string name="sbUDL_eq2">V<sub>x</sub>=</string>
     <string name="sbUDL_eq3">M<sub><small>max</small></sub>(at center)=</string>
-    <string name="sbUDL_eq5">(at center)</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

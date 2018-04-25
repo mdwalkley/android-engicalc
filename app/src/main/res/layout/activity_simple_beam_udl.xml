@@ -280,12 +280,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="1"
-                android:tooltipText="R=V=">
+                android:layout_weight="1">
 
                 <ImageView
                     style="@style/AnswerImageView"
-                    android:src="@drawable/simplebeam_udl_equation01" />
+                    android:src="@drawable/simplebeam_udl_equation1" />
 
                 <TextView
                     android:id="@+id/answer1"
@@ -297,12 +296,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="1"
-                android:tooltipText="@string/sbUDL_eq2">
+                android:layout_weight="1">
 
                 <ImageView
                     style="@style/AnswerImageView"
-                    android:src="@drawable/simplebeam_udl_equation02" />
+                    android:src="@drawable/simplebeam_udl_equation2" />
 
                 <TextView
                     android:id="@+id/answer2"
@@ -315,11 +313,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
-                android:tooltipText="@string/sbUDL_eq3">
+                android:tooltipText="@string/atcenter">
 
                 <ImageView
                     style="@style/AnswerImageView"
-                    android:src="@drawable/simplebeam_udl_equation03" />
+                    android:src="@drawable/simplebeam_udl_equation3" />
 
                 <TextView
                     android:id="@+id/answer3"
@@ -335,7 +333,7 @@
 
                 <ImageView
                     style="@style/AnswerImageView"
-                    android:src="@drawable/simplebeam_udl_equation04" />
+                    android:src="@drawable/simplebeam_udl_equation4" />
 
                 <TextView
                     android:id="@+id/answer4"
@@ -348,11 +346,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
-                android:tooltipText="@string/sbUDL_eq5">
+                android:tooltipText="@string/atcenter">
 
                 <ImageView
                     style="@style/AnswerImageView"
-                    android:src="@drawable/simplebeam_udl_equation05" />
+                    android:src="@drawable/simplebeam_udl_equation5" />
 
                 <TextView
                     android:id="@+id/answer5"
@@ -368,7 +366,7 @@
 
                 <ImageView
                     style="@style/AnswerImageView"
-                    android:src="@drawable/simplebeam_udl_equation06" />
+                    android:src="@drawable/simplebeam_udl_equation6" />
 
                 <TextView
                     android:id="@+id/answer6"

@@ -316,13 +316,13 @@
                 <LinearLayout
                     android:layout_width="0px"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:tooltipText="@string/maxagreatb">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:src="@drawable/sbudl_1" />
+                        style="@style/AnswerImageView"
+                        android:layout_marginStart="0dp"
+                        android:src="@drawable/clap_equation1small" />
 
                     <TextView
                         android:id="@+id/answer1"
@@ -335,13 +335,13 @@
                 <LinearLayout
                     android:layout_width="0px"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:tooltipText="@string/maxalessb">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:src="@drawable/sbudl_1" />
+                        style="@style/AnswerImageView"
+                        android:layout_marginStart="0dp"
+                        android:src="@drawable/clap_equation2small" />
 
                     <TextView
                         android:id="@+id/answer2"
@@ -360,13 +360,13 @@
                 <LinearLayout
                     android:layout_width="0px"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:tooltipText="@string/atloadpoint">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:src="@drawable/sbudl_1" />
+                        style="@style/AnswerImageView"
+                        android:layout_marginStart="0dp"
+                        android:src="@drawable/clap_equation3small" />
 
                     <TextView
                         android:id="@+id/answer3"
@@ -379,13 +379,13 @@
                 <LinearLayout
                     android:layout_width="0px"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:tooltipText="@string/whenxlessa">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:src="@drawable/sbudl_1" />
+                        style="@style/AnswerImageView"
+                        android:layout_marginStart="0dp"
+                        android:src="@drawable/clap_equation4small" />
 
                     <TextView
                         android:id="@+id/answer4"
@@ -396,13 +396,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:tooltipText="@string/whenagreatb">
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:src="@drawable/sbudl_1" />
+                    style="@style/AnswerImageView"
+                    android:src="@drawable/clap_equation5" />
 
                 <TextView
                     android:id="@+id/answer_5"
@@ -414,13 +413,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:tooltipText="@string/atloadpoint">
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:src="@drawable/sbudl_1" />
+                    style="@style/AnswerImageView"
+                    android:src="@drawable/clap_equation6" />
 
                 <TextView
                     android:id="@+id/answer6"
@@ -431,11 +429,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:tooltipText="@string/whenxlessa">
 
                 <ImageView
                     style="@style/AnswerImageView"
-                    android:src="@drawable/simplebeam_udl_equation05" />
+                    android:src="@drawable/clap_equation7" />
 
                 <TextView
                     android:id="@+id/answer7"
@@ -445,13 +444,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:tooltipText="@string/whenxgreata">
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:src="@drawable/sbudl_1" />
+                    style="@style/AnswerImageView"
+                    android:src="@drawable/clap_equation8" />
 
                 <TextView
                     android:id="@+id/answer8"
