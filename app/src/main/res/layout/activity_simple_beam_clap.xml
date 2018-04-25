@@ -404,7 +404,7 @@
                     android:src="@drawable/clap_equation5" />
 
                 <TextView
-                    android:id="@+id/answer_5"
+                    android:id="@+id/answer5"
                     style="@style/AnswerTextView" />
             </LinearLayout>
 
