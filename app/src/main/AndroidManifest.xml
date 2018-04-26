@@ -20,7 +20,10 @@
             android:name=".SimpleBeamUDL"
             android:label="@string/simpleBeamUDL_Title"
             android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".SimpleBeamCLAP"></activity>
+        <activity android:name=".SimpleBeamCLAP"
+            android:label="@string/simpleBeamUDL_Title"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="stateVisible"></activity>
     </application>
 
 </manifest>
