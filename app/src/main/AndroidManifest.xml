@@ -19,11 +19,11 @@
         <activity
             android:name=".SimpleBeamUDL"
             android:label="@string/simpleBeamUDL_Title"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".SimpleBeamCLAP"
             android:label="@string/simpleBeamUDL_Title"
-            android:parentActivityName=".MainActivity"
-            android:windowSoftInputMode="stateVisible"></activity>
+            android:parentActivityName=".MainActivity"/>
+            <!--android:windowSoftInputMode="stateVisible"-->
     </application>
 
 </manifest>
