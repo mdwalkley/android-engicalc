@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
+
 public class SimpleBeamCLAP extends AppCompatActivity {
 
     @Override
@@ -22,7 +24,7 @@ public class SimpleBeamCLAP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_beam_clap); //getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        showKeyboardAtStart(findViewById(R.id.input_P));
+        showKeyboard(findViewById(R.id.input_P));
 
         //Set Onclick Listeners
         //Calculate button
@@ -55,6 +57,8 @@ public class SimpleBeamCLAP extends AppCompatActivity {
             findViewById(R.id.parentLayout).setVisibility(View.VISIBLE);
             // (pop off backStack)
             getFragmentManager().popBackStack();
+            // Set next focus
+            showKeyboard(findViewById(R.id.input_i));
         }
     }
 
@@ -70,6 +74,7 @@ public class SimpleBeamCLAP extends AppCompatActivity {
 
     private void calculateAll(View view){
         double p=0,a=0,b=0,x=0,l=0,e=0,i=0;
+        NumberFormat nf = NumberFormat.getInstance();
 
         try{
             p = Double.valueOf(((EditText)findViewById(R.id.input_P)).getText().toString());
@@ -78,7 +83,8 @@ public class SimpleBeamCLAP extends AppCompatActivity {
             x = Double.valueOf(((EditText)findViewById(R.id.input_x)).getText().toString());
             l = a+b;
 
-            ((TextView)findViewById(R.id.answer1)).setText(Double.toString(equation1(p,b,l)));
+            
+            ((TextView)findViewById(R.id.answer1)).setText(nf.format(equation1(p,b,l)));
             ((TextView)findViewById(R.id.answer2)).setText(Double.toString(equation2(p,a,l)));
             ((TextView)findViewById(R.id.answer3)).setText(Double.toString(equation3(p,a,b,l)));
             ((TextView)findViewById(R.id.answer4)).setText(Double.toString(equation4(p,b,x,l)));
@@ -90,7 +96,7 @@ public class SimpleBeamCLAP extends AppCompatActivity {
             e = Double.valueOf(((EditText)findViewById(R.id.input_E)).getText().toString());
             i = Double.valueOf(((EditText)findViewById(R.id.input_i)).getText().toString());
 
-            ((TextView)findViewById(R.id.answer5)).setText(Double.toString(equation5(p, a, b, l, e, i)));
+            ((TextView)findViewById(R.id.answer5)).setText(nf.format(equation5(p, a, b, l, e, i)));
             ((TextView)findViewById(R.id.answer6)).setText(Double.toString(equation6(p, a, b, l, e, i)));
             ((TextView)findViewById(R.id.answer7)).setText(Double.toString(equation7(p, b, x, l, e, i)));
             ((TextView)findViewById(R.id.answer8)).setText(Double.toString(equation8(p, a, x, l, e, i)));
@@ -132,9 +138,11 @@ public class SimpleBeamCLAP extends AppCompatActivity {
         return (((P*a*(l-x))/(6*E*I*l))*(2*l*x-x*x-a*a)); //(Pa(l-x)/6EI*l)*(2*l*x-x^2-a^2)
     }
 
-    private void showKeyboardAtStart(View view){
+    private void showKeyboard(View view){
         view.requestFocus();
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+        //this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
     }
 
     public static void hideKeyboard(Activity activity){
