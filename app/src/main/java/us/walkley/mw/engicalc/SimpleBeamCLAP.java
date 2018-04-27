@@ -83,11 +83,11 @@ public class SimpleBeamCLAP extends AppCompatActivity {
             x = Double.valueOf(((EditText)findViewById(R.id.input_x)).getText().toString());
             l = a+b;
 
-            
+
             ((TextView)findViewById(R.id.answer1)).setText(nf.format(equation1(p,b,l)));
-            ((TextView)findViewById(R.id.answer2)).setText(Double.toString(equation2(p,a,l)));
-            ((TextView)findViewById(R.id.answer3)).setText(Double.toString(equation3(p,a,b,l)));
-            ((TextView)findViewById(R.id.answer4)).setText(Double.toString(equation4(p,b,x,l)));
+            ((TextView)findViewById(R.id.answer2)).setText(nf.format(equation2(p,a,l)));
+            ((TextView)findViewById(R.id.answer3)).setText(nf.format(equation3(p,a,b,l)));
+            ((TextView)findViewById(R.id.answer4)).setText(nf.format(equation4(p,b,x,l)));
         }catch (IllegalStateException | NumberFormatException exc) {
             Toast.makeText(this, "Invalid input.", Toast.LENGTH_LONG).show();
         }
@@ -97,9 +97,9 @@ public class SimpleBeamCLAP extends AppCompatActivity {
             i = Double.valueOf(((EditText)findViewById(R.id.input_i)).getText().toString());
 
             ((TextView)findViewById(R.id.answer5)).setText(nf.format(equation5(p, a, b, l, e, i)));
-            ((TextView)findViewById(R.id.answer6)).setText(Double.toString(equation6(p, a, b, l, e, i)));
-            ((TextView)findViewById(R.id.answer7)).setText(Double.toString(equation7(p, b, x, l, e, i)));
-            ((TextView)findViewById(R.id.answer8)).setText(Double.toString(equation8(p, a, x, l, e, i)));
+            ((TextView)findViewById(R.id.answer6)).setText(nf.format(equation6(p, a, b, l, e, i)));
+            ((TextView)findViewById(R.id.answer7)).setText(nf.format(equation7(p, b, x, l, e, i)));
+            ((TextView)findViewById(R.id.answer8)).setText(nf.format(equation8(p, a, x, l, e, i)));
         }catch (IllegalStateException | NumberFormatException exc) {
             Toast.makeText(this, "Invalid input.", Toast.LENGTH_LONG).show();
         }

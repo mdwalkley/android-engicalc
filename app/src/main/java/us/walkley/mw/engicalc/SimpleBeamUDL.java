@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
+
 public class SimpleBeamUDL extends AppCompatActivity {
 
     @Override
@@ -76,16 +78,17 @@ public class SimpleBeamUDL extends AppCompatActivity {
 
     private void calculateAll(View view){
         double w=0, l=0, x=0, e=0, i=0;
+        NumberFormat nf = NumberFormat.getInstance();
 
         try{
             w = Double.valueOf(((EditText)findViewById(R.id.input_w)).getText().toString());
             l = Double.valueOf(((EditText)findViewById(R.id.input_l)).getText().toString());
             x = Double.valueOf(((EditText)findViewById(R.id.input_x)).getText().toString());
 
-            ((TextView)findViewById(R.id.answer1)).setText(Double.toString(equation1(w,l)));
-            ((TextView)findViewById(R.id.answer2)).setText(Double.toString(equation2(w,l,x)));
-            ((TextView)findViewById(R.id.answer3)).setText(Double.toString(equation3(w,l,x)));
-            ((TextView)findViewById(R.id.answer4)).setText(Double.toString(equation4(w,l,x)));
+            ((TextView)findViewById(R.id.answer1)).setText(nf.format(equation1(w,l)));
+            ((TextView)findViewById(R.id.answer2)).setText(nf.format(equation2(w,l,x)));
+            ((TextView)findViewById(R.id.answer3)).setText(nf.format(equation3(w,l,x)));
+            ((TextView)findViewById(R.id.answer4)).setText(nf.format(equation4(w,l,x)));
         }catch (IllegalStateException | NumberFormatException exc) {
             Toast.makeText(this, "Invalid input.", Toast.LENGTH_LONG).show();
         }
@@ -95,8 +98,8 @@ public class SimpleBeamUDL extends AppCompatActivity {
             e = Double.valueOf(((EditText)findViewById(R.id.input_E)).getText().toString());
             double ei= e*i;
 
-            ((TextView)findViewById(R.id.answer5)).setText(Double.toString(equation5(w,l,x,ei)));
-            ((TextView)findViewById(R.id.answer6)).setText(Double.toString(equation6(w,l,x,ei)));
+            ((TextView)findViewById(R.id.answer5)).setText(nf.format(equation5(w,l,x,ei)));
+            ((TextView)findViewById(R.id.answer6)).setText(nf.format(equation6(w,l,x,ei)));
         }catch (IllegalStateException | NumberFormatException exc) {
             Toast.makeText(this, "Invalid inputs for E and I.", Toast.LENGTH_LONG).show();
         }
