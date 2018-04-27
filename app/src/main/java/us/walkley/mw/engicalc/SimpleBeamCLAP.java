@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatImageButton;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,8 @@ public class SimpleBeamCLAP extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_beam_clap); //getActionBar().setDisplayHomeAsUpEnabled(true);
+
+        showKeyboardAtStart(findViewById(R.id.input_P));
 
         //Set Onclick Listeners
         //Calculate button
@@ -127,6 +130,11 @@ public class SimpleBeamCLAP extends AppCompatActivity {
 
     private double equation8(double P, double a, double x, double l, double E, double I){
         return (((P*a*(l-x))/(6*E*I*l))*(2*l*x-x*x-a*a)); //(Pa(l-x)/6EI*l)*(2*l*x-x^2-a^2)
+    }
+
+    private void showKeyboardAtStart(View view){
+        view.requestFocus();
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
     }
 
     public static void hideKeyboard(Activity activity){

@@ -23,10 +23,7 @@ public class SimpleBeamUDL extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_beam_udl); //getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //Set focus and show keyboard
-        EditText firstInput = findViewById(R.id.input_w);
-        firstInput.requestFocus();
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        showKeyboardAtStart(findViewById(R.id.input_w));
 
         //Set onclick listeners
         //Calculate button
@@ -62,6 +59,8 @@ public class SimpleBeamUDL extends AppCompatActivity {
             getFragmentManager().popBackStack();
         }
     }
+
+
 
     private void startFragment(){
         hideKeyboard(this);
@@ -129,6 +128,12 @@ public class SimpleBeamUDL extends AppCompatActivity {
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id){
+    }
+
+    //Set focus and show keyboard
+    private void showKeyboardAtStart(View view){
+        view.requestFocus();
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
     }
 
     public static void hideKeyboard(Activity activity){
