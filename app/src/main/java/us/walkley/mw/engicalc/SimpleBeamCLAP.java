@@ -3,6 +3,7 @@ package us.walkley.mw.engicalc;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatImageButton;
@@ -24,8 +25,6 @@ public class SimpleBeamCLAP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_beam_clap); //getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        showKeyboard(findViewById(R.id.input_P));
-
         //Set Onclick Listeners
         //Calculate button
         final Button calculate = (Button) findViewById(R.id.calculate_button);
@@ -44,6 +43,18 @@ public class SimpleBeamCLAP extends AppCompatActivity {
                 startFragment();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        showKeyboard(findViewById(R.id.input_P));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        hideKeyboard(this);
     }
 
     @Override
@@ -140,13 +151,13 @@ public class SimpleBeamCLAP extends AppCompatActivity {
 
     private void showKeyboard(View view){
         view.requestFocus();
-        InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
         //this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
     }
 
     public static void hideKeyboard(Activity activity){
-        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
         //Find the currently focused view, so we can grab the correct window token from it.
         View view = activity.getCurrentFocus();
         //If no view currently has focus, create a new one, just so we can grab a window token from it

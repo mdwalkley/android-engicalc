@@ -25,8 +25,6 @@ public class SimpleBeamUDL extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_beam_udl); //getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        showKeyboard(findViewById(R.id.input_w));
-
         //Set onclick listeners
         //Calculate button
         final Button calculateButton = (Button) findViewById(R.id.calculate_button);
@@ -45,7 +43,18 @@ public class SimpleBeamUDL extends AppCompatActivity {
                 startFragment();
             }
         });
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        showKeyboard(findViewById(R.id.input_w));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        hideKeyboard(this);
     }
 
     @Override
@@ -138,13 +147,13 @@ public class SimpleBeamUDL extends AppCompatActivity {
     //Set focus and show keyboard
     private void showKeyboard(View view){
         view.requestFocus();
-        InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
         //this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
     }
 
     public static void hideKeyboard(Activity activity){
-        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
         //Find the currently focused view, so we can grab the correct window token from it.
         View view = activity.getCurrentFocus();
         //If no view currently has focus, create a new one, just so we can grab a window token from it
