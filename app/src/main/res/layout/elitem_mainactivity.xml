@@ -17,7 +17,6 @@
         android:paddingRight="8dp"
         android:gravity="center_vertical"
         android:autoSizeTextType="uniform"
-        android:autoSizeMaxTextSize="?android:textAppearanceLarge"
         android:background="?android:attr/selectableItemBackground"
         android:textColor="@color/colorTextWhite"
         tools:text="@string/simpleBeamCLAP_Title"
