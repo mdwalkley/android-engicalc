@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorPrimaryDark"
@@ -11,12 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="?android:listPreferredItemHeightSmall"
         android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingRight="8dp"
         android:gravity="center_vertical"
         android:autoSizeTextType="uniform"
-        android:textStyle="bold"
+        android:autoSizeMaxTextSize="?android:textAppearanceLarge"
         android:background="?android:attr/selectableItemBackground"
-        android:textColor="@color/colorTextWhite" />
+        android:textColor="@color/colorTextWhite"
+        tools:text="@string/simpleBeamCLAP_Title"
+        />
 
 </android.support.constraint.ConstraintLayout>

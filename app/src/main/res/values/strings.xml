@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">EngiCalc</string>
-    <string name="simpleBeamUDL_Title">Simple Beam Uniformly Distributed Load</string>
-    <string name="simpleBeamCLAP_Title">Simple Beam Concentrated Load at Any Point</string>
+    <string name="simpleBeamUDL_Title">Uniformly Distributed Load</string>
+    <string name="simpleBeamCLAP_Title">Concentrated Load at Any Point</string>
     <string-array name="eValue_names">
         <item>Wood</item>
         <item>Steel</item>

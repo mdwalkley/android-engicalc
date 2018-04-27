@@ -15,6 +15,8 @@
         android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
         android:textSize="26sp"
         android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:textAppearance="?android:textAppearanceLarge"
         android:textColor="@color/colorTextWhite"
         tools:text="Simple Beam"
         />
