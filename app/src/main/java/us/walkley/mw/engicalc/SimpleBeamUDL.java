@@ -40,7 +40,7 @@ public class SimpleBeamUDL extends AppCompatActivity {
         elasticityButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                startFragment();
+                startEFragment();
             }
         });
     }
@@ -62,8 +62,15 @@ public class SimpleBeamUDL extends AppCompatActivity {
         if(getFragmentManager().getBackStackEntryCount() == 0){
             super.onBackPressed();
         }else{
-            // Make fragment view go away
-            findViewById(R.id.elasticityFragment_Frame).setVisibility(View.GONE);
+            if (View.VISIBLE == findViewById(R.id.elasticityFragment_Frame).getVisibility()){
+                // Make EFragment view go away
+                findViewById(R.id.elasticityFragment_Frame).setVisibility(View.GONE);
+            }
+            /*if(View.VISIBLE == findViewById(R.id.iFragment_Frame).getVisibility()){
+                // Make IFragment view go away
+                findViewById(R.id.iFragment_Frame).setVisibility(View.GONE);
+            }*/
+
             // Make activity view visible
             findViewById(R.id.parentLayout).setVisibility(View.VISIBLE);
             // (pop off backStack)
@@ -75,7 +82,7 @@ public class SimpleBeamUDL extends AppCompatActivity {
 
 
 
-    private void startFragment(){
+    private void startEFragment(){
         hideKeyboard(this);
         //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
         FragmentManager manager = getFragmentManager();

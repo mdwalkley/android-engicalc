@@ -13,6 +13,8 @@ import java.util.List;
 
 //TODO: Rename app: EngiCalc, Calcineer, Engilator, Abdaraxus, Harpalus...
 //TODO: Make abstract class for calculation activities
+//TODO: Make fragment for I lookup
+//TODO: Import and complete Print functionality
 
 public class MainActivity extends AppCompatActivity {
     ExpandableListAdapter listAdapter;
