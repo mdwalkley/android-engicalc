@@ -15,6 +15,7 @@ import java.util.List;
 //TODO: Make abstract class for calculation activities
 //TODO: Make fragment for I lookup
 //TODO: Import and complete Print functionality
+//TODO: Make main ExpandableList just a List
 
 public class MainActivity extends AppCompatActivity {
     ExpandableListAdapter listAdapter;
