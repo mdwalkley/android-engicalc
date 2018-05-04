@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:listPreferredItemHeight"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimaryDark"
+    android:elevation="8dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/selectableItemBackground"/>
+
+        <TextView
+            android:id="@+id/textView_Category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="8dp"
+            android:gravity="top"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/colorTextWhite"
+            tools:text="Simple Beam"
+            />
+
+        <TextView
+            android:id="@+id/textView_Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="32dp"
+            android:paddingBottom="6dp"
+            android:gravity="bottom"
+            android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@color/colorTextWhite"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="26sp"
+            tools:text="Uniformly Distributed Load"
+            />
+
+</android.support.constraint.ConstraintLayout>
