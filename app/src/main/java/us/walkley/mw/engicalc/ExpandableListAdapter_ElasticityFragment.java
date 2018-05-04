@@ -69,7 +69,7 @@ public class ExpandableListAdapter_ElasticityFragment extends BaseExpandableList
             String headerTitle = (String)getGroup(i);
             if(view == null){
                 LayoutInflater inflater = (LayoutInflater)this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                view = inflater.inflate(R.layout.elgroup_elasticityfragment, null);
+                view = inflater.inflate(R.layout.fragment_elasticity_elgroup, null);
             }
             TextView lblListHeader = (TextView)view.findViewById(R.id.material_header_textview);
             lblListHeader.setTypeface(null, Typeface.BOLD);
@@ -85,7 +85,7 @@ public class ExpandableListAdapter_ElasticityFragment extends BaseExpandableList
 
             if(view == null){
                 LayoutInflater inflater = (LayoutInflater)this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                view = inflater.inflate(R.layout.elitem_elasticityfragment, null);
+                view = inflater.inflate(R.layout.fragment_elasticity_elitem, null);
             }
             TextView txtListChild = (TextView)view.findViewById(R.id.material_structural_type);
             txtListChild.setText(childText1);

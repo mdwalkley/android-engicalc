@@ -4,12 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
-
+import android.widget.AdapterView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 //TODO: Rename app: EngiCalc, Calcineer, Engilator, Abdaraxus, Harpalus...
 //TODO: Make abstract class for calculation activities
@@ -18,12 +16,9 @@ import java.util.List;
 //TODO: Make main ExpandableList just a List
 
 public class MainActivity extends AppCompatActivity {
-    ExpandableListAdapter listAdapter;
-    ExpandableListView expListView;
-    List<String> listDataHeader;
-    HashMap<String, List<String>> listDataChild;
-
-
+    ListAdapter listAdapter1;
+    ArrayList<EquationSetListItem> listData;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,82 +27,31 @@ public class MainActivity extends AppCompatActivity {
 
         initializeData();
 
-        expListView = (ExpandableListView)findViewById(R.id.expandableListView_MainActivity);
-        listAdapter = new ExpandableListAdapter_MainActivity(this, listDataHeader, listDataChild);
-        expListView.setAdapter(listAdapter);
-
+        listView = (ListView)findViewById(R.id.listView_MainActivity);
+        listAdapter1 = new ListAdapter_MainActivity(this, listData);
+        listView.setAdapter(listAdapter1);
 
         //onClick Listener
-        expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             @Override
-            public boolean onChildClick(ExpandableListView parent, View view, int i, int i1, long id) { // i=group, i1=child
-                Intent intent = null;
-
-                switch(i){ //i = group
-                    case 0: //Simple Beam
-                        switch(i1){ //i1 = child
-                            case 0: //Uniformly Distributed Load
-                                intent = new Intent(MainActivity.this, SimpleBeamUDL.class);
-                                break;
-                            case 1: //Concentrated Load at Any Point
-                                intent = new Intent(MainActivity.this, SimpleBeamCLAP.class);
-                                break;
-                        }
-                        break;
-                    case 1: //Complex Beam
-                        switch(i1){
-                            case 0:
-
-                                break;
-                        }
-                        break;
-                    case 2: //More Coming Soon
-                        switch(i1){
-                            case 0:
-
-                                break;
-                        }
-                        break;
-                    default:
-                }
-
-                if(intent != null){startActivity(intent);}
-
-
-
-//                Toast.makeText(getApplicationContext(),
-//                        listDataHeader.get(i) + ":" +listDataChild.get(listDataHeader.get(i)).get(i1), Toast.LENGTH_SHORT).show();
-                return false;
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = listData.get(i).getIntent();
+                if(null != intent){startActivity(intent);}
             }
-
         });
-
     }
 
+
     private void initializeData(){
-        listDataHeader = new ArrayList<String>();
-        listDataChild = new HashMap<String, List<String>>();
+        listData = new ArrayList<>();
 
-        //Adding Header Data
-        listDataHeader.add("Simple Beam");
-        listDataHeader.add("Complex Beam");
-        listDataHeader.add("More Coming Soon...");
-
-        //Adding Child Data
-        List<String> simpleBeamList = new ArrayList<String>();
-        simpleBeamList.add("Uniformly Distributed Load"); //0:0
-        simpleBeamList.add("Concentrated Load at Any Point"); //0:1
-
-        List<String> complexBeamList = new ArrayList<String>();
-        complexBeamList.add("Fucked Up Load"); //1:0
-
-        List<String> comingSoonList = new ArrayList<String>();
-        comingSoonList.add("...but not yet."); //2:0
-
-        listDataChild.put(listDataHeader.get(0), simpleBeamList);
-        listDataChild.put(listDataHeader.get(1), complexBeamList);
-        listDataChild.put(listDataHeader.get(2), comingSoonList);
+        listData.add(new EquationSetListItem("Simple Beam", "Uniformly Distributed Load",
+                new Intent(MainActivity.this, SimpleBeamUDL.class)));
+        listData.add(new EquationSetListItem("Simple Beam", "Concentrated Load at Any Point",
+                new Intent(MainActivity.this, SimpleBeamCLAP.class)));
+        listData.add(new EquationSetListItem("Complex Beam", "Fucked up Load", null));
+        listData.add(new EquationSetListItem("Coming Soon", "But Not Yet...", null));
 
     }
 

@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context="us.walkley.mw.engicalc.MainActivity">
 
-    <ExpandableListView
-        android:id="@+id/expandableListView_MainActivity"
+    <ListView
+        android:id="@+id/listView_MainActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
         <!--android:groupIndicator="@drawable/group_indicator"-->
-    </ExpandableListView>
+    </ListView>
 
 </android.support.constraint.ConstraintLayout>
