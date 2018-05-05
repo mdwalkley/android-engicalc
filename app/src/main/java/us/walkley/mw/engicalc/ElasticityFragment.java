@@ -18,7 +18,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class ElasticityFragment extends Fragment {
-    ExpandableListAdapter_ElasticityFragment listAdapter;
+    ElasticityFragment_ExpandableListAdapter listAdapter;
     ExpandableListView expandableListView;
     ArrayList<String> listDataHeader;
     HashMap<String, List<ElasticityFragment_MaterialChildInfo>> listDataChild;
@@ -45,7 +45,7 @@ public class ElasticityFragment extends Fragment {
         populateList();
         // Initialize ExpandableListView and Adapter
         expandableListView = (ExpandableListView) view.findViewById(R.id.myList);
-        listAdapter = new ExpandableListAdapter_ElasticityFragment(getActivity().getApplicationContext(), listDataHeader, listDataChild);
+        listAdapter = new ElasticityFragment_ExpandableListAdapter(getActivity().getApplicationContext(), listDataHeader, listDataChild);
         expandableListView.setAdapter(listAdapter);
 
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener(){

@@ -12,8 +12,8 @@ import java.util.ArrayList;
 //TODO: Rename app: EngiCalc, Calcineer, Engilator, Abdaraxus, Harpalus...
 //TODO: Make abstract class for calculation activities
 //TODO: Make fragment for I lookup
+//TODO: Update Equation Set UI
 //TODO: Import and complete Print functionality
-//TODO: Make main ExpandableList just a List
 
 public class MainActivity extends AppCompatActivity {
     ListAdapter listAdapter1;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         initializeData();
 
         listView = (ListView)findViewById(R.id.listView_MainActivity);
-        listAdapter1 = new ListAdapter_MainActivity(this, listData);
+        listAdapter1 = new MainActivity_ListAdapter(this, listData);
         listView.setAdapter(listAdapter1);
 
         //onClick Listener

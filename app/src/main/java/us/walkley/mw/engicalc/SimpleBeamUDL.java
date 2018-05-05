@@ -40,7 +40,16 @@ public class SimpleBeamUDL extends AppCompatActivity {
         elasticityButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                startEFragment();
+                startElasticityFragment();
+            }
+        });
+
+        //InertiaFragment button
+        AppCompatImageButton inertiaButton = (AppCompatImageButton) findViewById(R.id.search_button_i);
+        elasticityButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startInertiaFragment();
             }
         });
     }
@@ -66,10 +75,10 @@ public class SimpleBeamUDL extends AppCompatActivity {
                 // Make EFragment view go away
                 findViewById(R.id.elasticityFragment_Frame).setVisibility(View.GONE);
             }
-            /*if(View.VISIBLE == findViewById(R.id.iFragment_Frame).getVisibility()){
+            if(View.VISIBLE == findViewById(R.id.inertiaFragment_Frame).getVisibility()){
                 // Make IFragment view go away
-                findViewById(R.id.iFragment_Frame).setVisibility(View.GONE);
-            }*/
+                findViewById(R.id.inertiaFragment_Frame).setVisibility(View.GONE);
+            }
 
             // Make activity view visible
             findViewById(R.id.parentLayout).setVisibility(View.VISIBLE);
@@ -80,9 +89,17 @@ public class SimpleBeamUDL extends AppCompatActivity {
         }
     }
 
+    private void startInertiaFragment(){
+        hideKeyboard(this);
+        //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
+        FragmentManager manager = getFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.inertiaFragment_Frame, new InertiaFragment());
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 
-
-    private void startEFragment(){
+    private void startElasticityFragment(){
         hideKeyboard(this);
         //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
         FragmentManager manager = getFragmentManager();

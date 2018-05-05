@@ -16,12 +16,12 @@ import java.util.List;
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyInertiaRecyclerViewAdapter extends RecyclerView.Adapter<MyInertiaRecyclerViewAdapter.ViewHolder> {
+public class InertiaFragment_RecyclerViewAdapter extends RecyclerView.Adapter<InertiaFragment_RecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyInertiaRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public InertiaFragment_RecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }

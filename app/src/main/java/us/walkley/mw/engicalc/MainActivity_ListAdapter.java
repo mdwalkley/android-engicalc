@@ -15,9 +15,9 @@ import java.util.ArrayList;
  * Created by michael_walkley on 5/4/2018.
  */
 
-public class ListAdapter_MainActivity extends ArrayAdapter<EquationSetListItem> {
+public class MainActivity_ListAdapter extends ArrayAdapter<EquationSetListItem> {
 
-    ListAdapter_MainActivity(Activity context, ArrayList<EquationSetListItem> list){
+    MainActivity_ListAdapter(Activity context, ArrayList<EquationSetListItem> list){
         super(context, 0, list);
     }
 

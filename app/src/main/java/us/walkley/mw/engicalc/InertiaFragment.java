@@ -13,8 +13,6 @@ import android.view.ViewGroup;
 import us.walkley.mw.engicalc.dummy.DummyContent;
 import us.walkley.mw.engicalc.dummy.DummyContent.DummyItem;
 
-import java.util.List;
-
 /**
  * A fragment representing a list of Items.
  * <p/>
@@ -69,7 +67,7 @@ public class InertiaFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyInertiaRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new InertiaFragment_RecyclerViewAdapter(DummyContent.ITEMS, mListener));
         }
         return view;
     }

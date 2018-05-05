@@ -17,13 +17,13 @@ import java.util.Locale;
  * Created by michael_walkley on 4/24/2018.
  */
 
-public class ExpandableListAdapter_ElasticityFragment extends BaseExpandableListAdapter {
+public class ElasticityFragment_ExpandableListAdapter extends BaseExpandableListAdapter {
         private Context context;
         private List<String> listDataHeader;
         private HashMap<String,List<ElasticityFragment_MaterialChildInfo>> listDataChild ;
 
 
-        public ExpandableListAdapter_ElasticityFragment(Context context, List<String> listDataHeader, HashMap<String, List<ElasticityFragment_MaterialChildInfo>> listDataChild) {
+        public ElasticityFragment_ExpandableListAdapter(Context context, List<String> listDataHeader, HashMap<String, List<ElasticityFragment_MaterialChildInfo>> listDataChild) {
             this.context = context;
             this.listDataHeader = listDataHeader;
             this.listDataChild = listDataChild;
