@@ -29,7 +29,7 @@ public class InertiaFragment_RecyclerViewAdapter extends RecyclerView.Adapter<In
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_inertia, parent, false);
+                .inflate(R.layout.fragment_inertia_listitem, parent, false);
         return new ViewHolder(view);
     }
 

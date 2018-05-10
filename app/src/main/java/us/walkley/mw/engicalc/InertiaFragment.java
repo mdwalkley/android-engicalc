@@ -21,9 +21,7 @@ import us.walkley.mw.engicalc.dummy.DummyContent.DummyItem;
  */
 public class InertiaFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
 
@@ -56,7 +54,7 @@ public class InertiaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_inertia_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_inertia, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
