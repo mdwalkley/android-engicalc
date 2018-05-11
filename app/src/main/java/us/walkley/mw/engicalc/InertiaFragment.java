@@ -9,6 +9,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ExpandableListView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import us.walkley.mw.engicalc.dummy.DummyContent;
 import us.walkley.mw.engicalc.dummy.DummyContent.DummyItem;
@@ -24,6 +30,7 @@ public class InertiaFragment extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+    private ArrayList<ElasticityFragment_MaterialChildInfo> listData;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -56,6 +63,13 @@ public class InertiaFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_inertia, container, false);
 
+        // Make activity view go away
+        getActivity().findViewById(R.id.parentLayout).setVisibility(View.GONE);
+        // Make fragment view visible
+        getActivity().findViewById(R.id.inertiaFragment_Frame).setVisibility(View.VISIBLE);
+        // Initialize data for expandable list
+        populateList();
+
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -65,8 +79,9 @@ public class InertiaFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new InertiaFragment_RecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new InertiaFragment_RecyclerViewAdapter(listData, mListener));
         }
+
         return view;
     }
 
@@ -99,7 +114,20 @@ public class InertiaFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(ElasticityFragment_MaterialChildInfo i);
     }
+
+    private void populateList() {
+        listData = new ArrayList<>();
+
+        listData.add(new ElasticityFragment_MaterialChildInfo("2 x 2", 5.71));
+        listData.add(new ElasticityFragment_MaterialChildInfo("2 x 4", 2.12));
+        listData.add(new ElasticityFragment_MaterialChildInfo("2 x 6", 1.65));
+        listData.add(new ElasticityFragment_MaterialChildInfo("2 x 8", 0.32));
+        listData.add(new ElasticityFragment_MaterialChildInfo("2 x 10", 0.15));
+        listData.add(new ElasticityFragment_MaterialChildInfo("4 x 4", 5.88));
+        listData.add(new ElasticityFragment_MaterialChildInfo("More coming soon...", 0));
+
+    }
+
 }
