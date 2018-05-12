@@ -10,12 +10,13 @@ import android.support.v7.widget.AppCompatImageButton;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * Created by michael_walkley on 5/3/2018.
  */
 
-public abstract class EquationSet extends AppCompatActivity{
+public abstract class EquationSet extends AppCompatActivity implements InertiaFragment.OnListFragmentInteractionListener{
     //Variables
     protected int activityLayout;
 
@@ -119,6 +120,15 @@ public abstract class EquationSet extends AppCompatActivity{
         transaction.commit();
     }
 
+    //@Override
+    public void onListFragmentInteraction_E(ElasticityFragment_MaterialChildInfo iVal) {
+        // Grab I Value EditText view from activity
+        EditText inputView = findViewById(R.id.input_i);
+        // Set text in the EditText to the selected E Value
+        inputView.setText(Double.toString(iVal.getEValue()));
+        onBackPressed();
+    }
+
     private void startIFragment(){
         hideKeyboard(this);
         FragmentManager manager = getFragmentManager();
@@ -126,5 +136,14 @@ public abstract class EquationSet extends AppCompatActivity{
         transaction.replace(R.id.elasticityFragment_Frame, new ElasticityFragment());
         transaction.addToBackStack(null);
         transaction.commit();}
+
+    @Override
+    public void onListFragmentInteraction_Inertia(ElasticityFragment_MaterialChildInfo iVal) {
+        // Grab I Value EditText view from activity
+        EditText inputView = findViewById(R.id.input_i);
+        // Set text in the EditText to the selected E Value
+        inputView.setText(Double.toString(iVal.getEValue()));
+        onBackPressed();
+    }
 }
 

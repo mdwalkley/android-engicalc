@@ -30,4 +30,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/colorTextBlack"
         tools:text="5.72"/>
+
+    <View style="@style/HorizontalSeparator_1dp"
+        android:backgroundTint="@color/colorAccent"
+        />
+
 </android.support.constraint.ConstraintLayout>

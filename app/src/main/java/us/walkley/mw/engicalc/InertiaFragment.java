@@ -114,7 +114,7 @@ public class InertiaFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnListFragmentInteractionListener {
-        void onListFragmentInteraction(ElasticityFragment_MaterialChildInfo i);
+        void onListFragmentInteraction_Inertia(ElasticityFragment_MaterialChildInfo i);
     }
 
     private void populateList() {

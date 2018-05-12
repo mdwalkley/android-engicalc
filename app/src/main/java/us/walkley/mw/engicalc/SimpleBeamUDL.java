@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import java.text.NumberFormat;
 
-public class SimpleBeamUDL extends AppCompatActivity implements InertiaFragment.OnListFragmentInteractionListener {
+public class SimpleBeamUDL extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -188,8 +188,4 @@ public class SimpleBeamUDL extends AppCompatActivity implements InertiaFragment.
         view.clearFocus();
     }
 
-    @Override
-    public void onListFragmentInteraction(ElasticityFragment_MaterialChildInfo i) {
-
-    }
 }
