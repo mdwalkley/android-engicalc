@@ -89,13 +89,13 @@ public abstract class EquationSet extends AppCompatActivity
             super.onBackPressed();
         }else{
             // Make fragment view go away
-            // Grab the current fragment
-            Fragment currentFragment = getCurrentFragment();
-            // Check currentFragment Tag and hide corresponding fragment frame
-            if(currentFragment.getTag() == EFRAG){
-                findViewById(R.id.elasticityFragment_Frame).setVisibility(View.GONE);
-            } else if(currentFragment.getTag() == IFRAG) {
-                findViewById(R.id.inertiaFragment_Frame).setVisibility(View.GONE);
+            View fragmentFrame = findViewById(R.id.elasticityFragment_Frame);
+            if(fragmentFrame.getVisibility() == View.VISIBLE){
+                fragmentFrame.setVisibility(View.GONE);
+            }
+            fragmentFrame = findViewById(R.id.inertiaFragment_Frame);
+            if(fragmentFrame.getVisibility() == View.VISIBLE) {
+                fragmentFrame.setVisibility(View.GONE);
             }
             // Make activity view visible
             findViewById(R.id.parentLayout).setVisibility(View.VISIBLE);
@@ -104,13 +104,6 @@ public abstract class EquationSet extends AppCompatActivity
             // Set next focus
             showKeyboard(findViewById(R.id.input_i));
         }
-    }
-
-    //Helper method
-    private Fragment getCurrentFragment(){
-        FragmentManager fragmentManager = activity.getFragmentManager();
-        String fragmentTag = fragmentManager.getBackStackEntryAt(fragmentManager.getBackStackEntryCount()-1).getName();
-        return fragmentManager.findFragmentByTag(fragmentTag);
     }
 
     //Set focus and show keyboard
