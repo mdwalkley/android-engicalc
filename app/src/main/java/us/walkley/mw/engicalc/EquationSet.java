@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
+import android.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageButton;
 import android.view.View;
@@ -22,6 +23,8 @@ public abstract class EquationSet extends AppCompatActivity
     //Variables
     protected int activityLayout;
     private static Activity activity;
+    private final static String EFRAG = "ElasticityFragment";
+    private final static String IFRAG = "InertiaFragment";
 
     EquationSet(){};
 
@@ -37,7 +40,35 @@ public abstract class EquationSet extends AppCompatActivity
         super.onCreate(savedInstanceState);
         //getActionBar().setDisplayHomeAsUpEnabled(true);
         activity = this;
+    }
 
+    protected void setOnClickListeners(int cID, int eID, int iID){
+        //Calculate button
+        final Button calculateButton = findViewById(cID);
+        calculateButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                calculateAll(view);
+            }
+        });
+
+        //ElasticityFragment button
+        AppCompatImageButton elasticityButton = findViewById(eID);
+        elasticityButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startEFragment();
+            }
+        });
+
+        //IFragment button
+        AppCompatImageButton inertiaButton = findViewById(iID);
+        inertiaButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startIFragment();
+            }
+        });
     }
 
     @Override
@@ -52,12 +83,20 @@ public abstract class EquationSet extends AppCompatActivity
         hideKeyboard(this);
     }
 
-    public void onBackPressed(int fragmentFrameID){
-        if(getFragmentManager().getBackStackEntryCount() == 0){
+    @Override
+    public void onBackPressed(){
+        if(activity.getFragmentManager().getBackStackEntryCount() == 0){
             super.onBackPressed();
         }else{
             // Make fragment view go away
-            findViewById(fragmentFrameID).setVisibility(View.GONE);
+            // Grab the current fragment
+            Fragment currentFragment = getCurrentFragment();
+            // Check currentFragment Tag and hide corresponding fragment frame
+            if(currentFragment.getTag() == EFRAG){
+                findViewById(R.id.elasticityFragment_Frame).setVisibility(View.GONE);
+            } else if(currentFragment.getTag() == IFRAG) {
+                findViewById(R.id.inertiaFragment_Frame).setVisibility(View.GONE);
+            }
             // Make activity view visible
             findViewById(R.id.parentLayout).setVisibility(View.VISIBLE);
             // (pop off backStack)
@@ -65,6 +104,13 @@ public abstract class EquationSet extends AppCompatActivity
             // Set next focus
             showKeyboard(findViewById(R.id.input_i));
         }
+    }
+
+    //Helper method
+    private Fragment getCurrentFragment(){
+        FragmentManager fragmentManager = activity.getFragmentManager();
+        String fragmentTag = fragmentManager.getBackStackEntryAt(fragmentManager.getBackStackEntryCount()-1).getName();
+        return fragmentManager.findFragmentByTag(fragmentTag);
     }
 
     //Set focus and show keyboard
@@ -94,7 +140,7 @@ public abstract class EquationSet extends AppCompatActivity
         //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
         FragmentManager manager = activity.getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.elasticityFragment_Frame, new ElasticityFragment());
+        transaction.replace(R.id.elasticityFragment_Frame, new ElasticityFragment(), EFRAG);
         transaction.addToBackStack(null);
         transaction.commit();
     }
@@ -113,7 +159,7 @@ public abstract class EquationSet extends AppCompatActivity
         hideKeyboard(activity);
         FragmentManager manager = activity.getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.inertiaFragment_Frame, new InertiaFragment());
+        transaction.replace(R.id.inertiaFragment_Frame, new InertiaFragment(), IFRAG);
         transaction.addToBackStack(null);
         transaction.commit();}
 
@@ -123,7 +169,7 @@ public abstract class EquationSet extends AppCompatActivity
         EditText inputView = findViewById(R.id.input_i);
         // Set text in the EditText to the selected I Value
         inputView.setText(Double.toString(iVal.getEValue()));
-        onBackPressed(R.id.inertiaFragment_Frame);
+        onBackPressed();
     }
 }
 

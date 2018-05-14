@@ -23,7 +23,7 @@ public class SimpleBeamCLAP extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simple_beam_clap); //getActionBar().setDisplayHomeAsUpEnabled(true);
+        setContentView(R.layout.activity_simple_beam_clap);
 
         //Set Onclick Listeners
         //Calculate button

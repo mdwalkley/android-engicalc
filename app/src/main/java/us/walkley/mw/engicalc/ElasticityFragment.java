@@ -59,7 +59,7 @@ public class ElasticityFragment extends Fragment {
                 EditText inputView = getActivity().findViewById(R.id.input_E);
                 // Set text in the EditText to the selected E Value
                 inputView.setText(Double.toString(eVal));
-                ((EquationSet)getActivity()).onBackPressed(R.id.elasticityFragment_Frame);
+                getActivity().onBackPressed();
                 return false;
             }
 

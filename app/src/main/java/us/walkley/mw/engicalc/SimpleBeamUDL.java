@@ -24,34 +24,8 @@ public class SimpleBeamUDL extends EquationSet {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_beam_udl);
-
         //Set onclick listeners
-        //Calculate button
-        final Button calculateButton = (Button) findViewById(R.id.calculate_button);
-        calculateButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                calculateAll(view);
-            }
-        });
-
-        //ElasticityFragment button
-        AppCompatImageButton elasticityButton = findViewById(R.id.search_button_E);
-        elasticityButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                EquationSet.startEFragment();
-            }
-        });
-
-        //IFragment button
-        AppCompatImageButton inertiaButton = findViewById(R.id.search_button_i);
-        inertiaButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                EquationSet.startIFragment();
-            }
-        });
+        setOnClickListeners(R.id.calculate_button, R.id.search_button_E, R.id.search_button_i);
     }
 
     void calculateAll(View view){
@@ -109,7 +83,5 @@ public class SimpleBeamUDL extends EquationSet {
     private double equation6(double w, double l, double x, double EI){
         return (w*x)/(24*EI)*(Math.pow(l,3)-2*l*x*x+Math.pow(x,3));  //((w*x)/(24*ei))*(l^3 - 2*l*x^2 + x^3);
     }
-
-
 
 }
