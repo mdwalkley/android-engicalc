@@ -21,6 +21,9 @@ public abstract class EquationSet extends AppCompatActivity
 
     //Variables
     protected int activityLayout;
+    private static Activity activity;
+
+    EquationSet(){};
 
     EquationSet (int layoutID){
         activityLayout = layoutID;
@@ -32,35 +35,9 @@ public abstract class EquationSet extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(activityLayout); //getActionBar().setDisplayHomeAsUpEnabled(true);
+        //getActionBar().setDisplayHomeAsUpEnabled(true);
+        activity = this;
 
-        //Set onclick listeners
-        //Calculate button
-        final Button calculateButton = (Button) findViewById(R.id.calculate_button);
-        calculateButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                calculateAll(view);
-            }
-        });
-
-        //ElasticityFragment button
-        AppCompatImageButton elasticityButton = (AppCompatImageButton) findViewById(R.id.search_button_E);
-        elasticityButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                startEFragment();
-            }
-        });
-
-        //IFragment button
-        AppCompatImageButton inertiaButton = (AppCompatImageButton) findViewById(R.id.search_button_i);
-        inertiaButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                startIFragment();
-            }
-        });
     }
 
     @Override
@@ -75,13 +52,12 @@ public abstract class EquationSet extends AppCompatActivity
         hideKeyboard(this);
     }
 
-    @Override
-    public void onBackPressed(){
+    public void onBackPressed(int fragmentFrameID){
         if(getFragmentManager().getBackStackEntryCount() == 0){
             super.onBackPressed();
         }else{
             // Make fragment view go away
-            findViewById(R.id.elasticityFragment_Frame).setVisibility(View.GONE);
+            findViewById(fragmentFrameID).setVisibility(View.GONE);
             // Make activity view visible
             findViewById(R.id.parentLayout).setVisibility(View.VISIBLE);
             // (pop off backStack)
@@ -113,10 +89,10 @@ public abstract class EquationSet extends AppCompatActivity
 
 
     //Elasticity Fragment
-    private void startEFragment(){
-        hideKeyboard(this);
+    static void startEFragment(){
+        hideKeyboard(activity);
         //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
-        FragmentManager manager = getFragmentManager();
+        FragmentManager manager = activity.getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.elasticityFragment_Frame, new ElasticityFragment());
         transaction.addToBackStack(null);
@@ -133,11 +109,11 @@ public abstract class EquationSet extends AppCompatActivity
     }
 */
     //Inertia Fragment
-    private void startIFragment(){
-        hideKeyboard(this);
-        FragmentManager manager = getFragmentManager();
+    static void startIFragment(){
+        hideKeyboard(activity);
+        FragmentManager manager = activity.getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.elasticityFragment_Frame, new ElasticityFragment());
+        transaction.replace(R.id.inertiaFragment_Frame, new InertiaFragment());
         transaction.addToBackStack(null);
         transaction.commit();}
 
@@ -147,7 +123,7 @@ public abstract class EquationSet extends AppCompatActivity
         EditText inputView = findViewById(R.id.input_i);
         // Set text in the EditText to the selected I Value
         inputView.setText(Double.toString(iVal.getEValue()));
-        onBackPressed();
+        onBackPressed(R.id.inertiaFragment_Frame);
     }
 }
 

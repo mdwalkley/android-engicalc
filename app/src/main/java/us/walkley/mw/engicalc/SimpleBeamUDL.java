@@ -18,12 +18,12 @@ import android.widget.Toast;
 
 import java.text.NumberFormat;
 
-public class SimpleBeamUDL extends AppCompatActivity {
+public class SimpleBeamUDL extends EquationSet {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simple_beam_udl); //getActionBar().setDisplayHomeAsUpEnabled(true);
+        setContentView(R.layout.activity_simple_beam_udl);
 
         //Set onclick listeners
         //Calculate button
@@ -36,80 +36,25 @@ public class SimpleBeamUDL extends AppCompatActivity {
         });
 
         //ElasticityFragment button
-        AppCompatImageButton elasticityButton = (AppCompatImageButton) findViewById(R.id.search_button_E);
+        AppCompatImageButton elasticityButton = findViewById(R.id.search_button_E);
         elasticityButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                startElasticityFragment();
+                EquationSet.startEFragment();
             }
         });
 
-        //InertiaFragment button
-        AppCompatImageButton inertiaButton = (AppCompatImageButton) findViewById(R.id.search_button_i);
+        //IFragment button
+        AppCompatImageButton inertiaButton = findViewById(R.id.search_button_i);
         inertiaButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                startInertiaFragment();
+                EquationSet.startIFragment();
             }
         });
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        showKeyboard(findViewById(R.id.input_w));
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        hideKeyboard(this);
-    }
-
-    @Override
-    public void onBackPressed(){
-        if(getFragmentManager().getBackStackEntryCount() == 0){
-            super.onBackPressed();
-        }else{
-            if (View.VISIBLE == findViewById(R.id.elasticityFragment_Frame).getVisibility()){
-                // Make EFragment view go away
-                findViewById(R.id.elasticityFragment_Frame).setVisibility(View.GONE);
-            }
-            if(View.VISIBLE == findViewById(R.id.inertiaFragment_Frame).getVisibility()){
-                // Make IFragment view go away
-                findViewById(R.id.inertiaFragment_Frame).setVisibility(View.GONE);
-            }
-
-            // Make activity view visible
-            findViewById(R.id.parentLayout).setVisibility(View.VISIBLE);
-            // (pop off backStack)
-            getFragmentManager().popBackStack();
-            // Set next focus
-            showKeyboard(findViewById(R.id.input_i));
-        }
-    }
-
-    private void startInertiaFragment(){
-        hideKeyboard(this);
-        //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
-        FragmentManager manager = getFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.inertiaFragment_Frame, new InertiaFragment());
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-
-    private void startElasticityFragment(){
-        hideKeyboard(this);
-        //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
-        FragmentManager manager = getFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.elasticityFragment_Frame, new ElasticityFragment());
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-
-    private void calculateAll(View view){
+    void calculateAll(View view){
         double w=0, l=0, x=0, e=0, i=0;
         NumberFormat nf = NumberFormat.getInstance();
 
@@ -165,27 +110,6 @@ public class SimpleBeamUDL extends AppCompatActivity {
         return (w*x)/(24*EI)*(Math.pow(l,3)-2*l*x*x+Math.pow(x,3));  //((w*x)/(24*ei))*(l^3 - 2*l*x^2 + x^3);
     }
 
-    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id){
-    }
 
-    //Set focus and show keyboard
-    private void showKeyboard(View view){
-        view.requestFocus();
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
-        //this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
-    }
-
-    public static void hideKeyboard(Activity activity){
-        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
-        //Find the currently focused view, so we can grab the correct window token from it.
-        View view = activity.getCurrentFocus();
-        //If no view currently has focus, create a new one, just so we can grab a window token from it
-        if (view == null){
-            view = new View(activity);
-        }
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        view.clearFocus();
-    }
 
 }
