@@ -16,7 +16,9 @@ import android.widget.EditText;
  * Created by michael_walkley on 5/3/2018.
  */
 
-public abstract class EquationSet extends AppCompatActivity implements InertiaFragment.OnListFragmentInteractionListener{
+public abstract class EquationSet extends AppCompatActivity
+        implements InertiaFragment.OnListFragmentInteractionListener{ //, ElasticityFragment.OnListFragmentInteractionListener
+
     //Variables
     protected int activityLayout;
 
@@ -52,14 +54,13 @@ public abstract class EquationSet extends AppCompatActivity implements InertiaFr
         });
 
         //IFragment button
-        /*AppCompatImageButton elasticityButton = (AppCompatImageButton) findViewById(R.id.search_button_E);
-        elasticityButton.setOnClickListener(new View.OnClickListener(){
+        AppCompatImageButton inertiaButton = (AppCompatImageButton) findViewById(R.id.search_button_i);
+        inertiaButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                startEFragment();
+                startIFragment();
             }
         });
-        */
     }
 
     @Override
@@ -110,6 +111,8 @@ public abstract class EquationSet extends AppCompatActivity implements InertiaFr
         view.clearFocus();
     }
 
+
+    //Elasticity Fragment
     private void startEFragment(){
         hideKeyboard(this);
         //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
@@ -119,16 +122,17 @@ public abstract class EquationSet extends AppCompatActivity implements InertiaFr
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
-    //@Override
-    public void onListFragmentInteraction_E(ElasticityFragment_MaterialChildInfo iVal) {
-        // Grab I Value EditText view from activity
-        EditText inputView = findViewById(R.id.input_i);
+/*
+    @Override
+    public void onListFragmentInteraction_Elasticity(Double e) {
+        // Grab E Value EditText View from activity
+        EditText inputView = findViewById(R.id.input_E);
         // Set text in the EditText to the selected E Value
-        inputView.setText(Double.toString(iVal.getEValue()));
+        inputView.setText(Double.toString(e));
         onBackPressed();
     }
-
+*/
+    //Inertia Fragment
     private void startIFragment(){
         hideKeyboard(this);
         FragmentManager manager = getFragmentManager();
@@ -141,7 +145,7 @@ public abstract class EquationSet extends AppCompatActivity implements InertiaFr
     public void onListFragmentInteraction_Inertia(ElasticityFragment_MaterialChildInfo iVal) {
         // Grab I Value EditText view from activity
         EditText inputView = findViewById(R.id.input_i);
-        // Set text in the EditText to the selected E Value
+        // Set text in the EditText to the selected I Value
         inputView.setText(Double.toString(iVal.getEValue()));
         onBackPressed();
     }

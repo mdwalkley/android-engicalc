@@ -12,12 +12,13 @@ import java.util.ArrayList;
 //TODO: Rename app: EngiCalc, Calcineer, Engilator, Abdaraxus, Harpalus...
 //TODO: Make abstract class for calculation activities
 //TODO: Make fragment for I lookup
+//TODO: Update Elasticity Fragment to match I fragment
 //TODO: Update Equation Set UI
 //TODO: Import and complete Print functionality
 
 public class MainActivity extends AppCompatActivity {
     ListAdapter listAdapter1;
-    ArrayList<EquationSetListItem> listData;
+    ArrayList<MainActivity_EquationSetListItem> listData;
     ListView listView;
 
     @Override
@@ -46,12 +47,12 @@ public class MainActivity extends AppCompatActivity {
     private void initializeData(){
         listData = new ArrayList<>();
 
-        listData.add(new EquationSetListItem("Simple Beam", "Uniformly Distributed Load",
+        listData.add(new MainActivity_EquationSetListItem("Simple Beam", "Uniformly Distributed Load",
                 new Intent(MainActivity.this, SimpleBeamUDL.class)));
-        listData.add(new EquationSetListItem("Simple Beam", "Concentrated Load at Any Point",
+        listData.add(new MainActivity_EquationSetListItem("Simple Beam", "Concentrated Load at Any Point",
                 new Intent(MainActivity.this, SimpleBeamCLAP.class)));
-        listData.add(new EquationSetListItem("Complex Beam", "Fucked up Load", null));
-        listData.add(new EquationSetListItem("Coming Soon", "But Not Yet...", null));
+        listData.add(new MainActivity_EquationSetListItem("Complex Beam", "Fucked up Load", null));
+        listData.add(new MainActivity_EquationSetListItem("Coming Soon", "But Not Yet...", null));
 
     }
 

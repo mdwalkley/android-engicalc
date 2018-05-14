@@ -6,11 +6,11 @@ import android.content.Intent;
  * Created by michael_walkley on 5/4/2018.
  */
 
-public class EquationSetListItem {
+public class MainActivity_EquationSetListItem {
     private String mCategory, mTitle;
     private Intent mIntent;
 
-    public EquationSetListItem(String category, String title, Intent intent){
+    public MainActivity_EquationSetListItem(String category, String title, Intent intent){
         this.mCategory = category;
         this.mTitle = title;
         this.mIntent = intent;
@@ -42,7 +42,7 @@ public class EquationSetListItem {
 
     @Override
     public String toString() {
-        return "EquationSetListItem{" +
+        return "MainActivity_EquationSetListItem{" +
                 "mCategory='" + mCategory + '\'' +
                 ", mTitle='" + mTitle + '\'' +
                 ", mIntent=" + mIntent +

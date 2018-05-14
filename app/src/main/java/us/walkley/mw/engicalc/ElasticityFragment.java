@@ -54,6 +54,7 @@ public class ElasticityFragment extends Fragment {
             public boolean onChildClick(ExpandableListView parent, View view, int group, int child, long id) {
                 // Grab selected E Value
                 Double eVal = listDataChild.get(listDataHeader.get(group)).get(child).getEValue();
+                //((EquationSet)getActivity()).onListFragmentInteraction_Elasticity(eVal);
                 // Grab E Value EditText view from activity
                 EditText inputView = getActivity().findViewById(R.id.input_E);
                 // Set text in the EditText to the selected E Value
@@ -67,6 +68,11 @@ public class ElasticityFragment extends Fragment {
         return view;
     }
 
+    /*
+    public interface OnListFragmentInteractionListener {
+        void onListFragmentInteraction_Elasticity(Double e);
+    }
+*/
     private void populateList() {
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, List<ElasticityFragment_MaterialChildInfo>>();
@@ -120,6 +126,5 @@ public class ElasticityFragment extends Fragment {
         inputList = new ArrayList<>();
         inputList.add(new ElasticityFragment_MaterialChildInfo("...but not yet.", 0));
         listDataChild.put(listDataHeader.get(4), inputList);
-
     }
 }

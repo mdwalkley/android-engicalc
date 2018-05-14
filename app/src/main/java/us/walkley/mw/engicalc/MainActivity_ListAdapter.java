@@ -15,16 +15,16 @@ import java.util.ArrayList;
  * Created by michael_walkley on 5/4/2018.
  */
 
-public class MainActivity_ListAdapter extends ArrayAdapter<EquationSetListItem> {
+public class MainActivity_ListAdapter extends ArrayAdapter<MainActivity_EquationSetListItem> {
 
-    MainActivity_ListAdapter(Activity context, ArrayList<EquationSetListItem> list){
+    MainActivity_ListAdapter(Activity context, ArrayList<MainActivity_EquationSetListItem> list){
         super(context, 0, list);
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        EquationSetListItem currentItem = getItem(position);
+        MainActivity_EquationSetListItem currentItem = getItem(position);
         View listItemView = convertView;
         if(null == listItemView){
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.activity_main_listitem, parent, false);
