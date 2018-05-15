@@ -28,6 +28,12 @@ public class SimpleBeamUDL extends EquationSet {
         setOnClickListeners(R.id.calculate_button, R.id.search_button_E, R.id.search_button_i);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        showKeyboard(findViewById(R.id.input_w));
+    }
+
     void calculateAll(View view){
         double w=0, l=0, x=0, e=0, i=0;
         NumberFormat nf = NumberFormat.getInstance();

@@ -284,6 +284,18 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView_iEq" />
 
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/search_button_i"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ic_search_black_24dp"
+                    android:layout_marginRight="3dp"
+                    app:layout_constraintEnd_toEndOf="@id/input_i"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:tint="@color/colorPrimaryLight"
+                    android:background="@android:color/transparent"/>
+
             </android.support.constraint.ConstraintLayout>
 
         </LinearLayout>
@@ -464,6 +476,12 @@
     </LinearLayout>
 
     <FrameLayout android:id="@+id/elasticityFragment_Frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+
+    <FrameLayout android:id="@+id/inertiaFragment_Frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"

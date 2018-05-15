@@ -1,24 +1,14 @@
 package us.walkley.mw.engicalc;
 
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatImageButton;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.NumberFormat;
 
-public class SimpleBeamCLAP extends AppCompatActivity {
+public class SimpleBeamCLAP extends EquationSet {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,23 +16,7 @@ public class SimpleBeamCLAP extends AppCompatActivity {
         setContentView(R.layout.activity_simple_beam_clap);
 
         //Set Onclick Listeners
-        //Calculate button
-        final Button calculate = (Button) findViewById(R.id.calculate_button);
-        calculate.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                calculateAll(view);
-            }
-        });
-
-        //ElasticityFragment button
-        AppCompatImageButton elasticityButton = (AppCompatImageButton) findViewById(R.id.search_button_E);
-        elasticityButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                startFragment();
-            }
-        });
+        setOnClickListeners(R.id.calculate_button, R.id.search_button_E, R.id.search_button_i);
     }
 
     @Override
@@ -51,39 +25,7 @@ public class SimpleBeamCLAP extends AppCompatActivity {
         showKeyboard(findViewById(R.id.input_P));
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        hideKeyboard(this);
-    }
-
-    @Override
-    public void onBackPressed(){
-        if(getFragmentManager().getBackStackEntryCount() == 0){
-            super.onBackPressed();
-        }else{
-            // Make fragment view go away
-            findViewById(R.id.elasticityFragment_Frame).setVisibility(View.GONE);
-            // Make activity view visible
-            findViewById(R.id.parentLayout).setVisibility(View.VISIBLE);
-            // (pop off backStack)
-            getFragmentManager().popBackStack();
-            // Set next focus
-            showKeyboard(findViewById(R.id.input_i));
-        }
-    }
-
-    private void startFragment(){
-        hideKeyboard(this);
-        //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
-        FragmentManager manager = getFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.elasticityFragment_Frame, new ElasticityFragment());
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-
-    private void calculateAll(View view){
+    void calculateAll(View view){
         double p=0,a=0,b=0,x=0,l=0,e=0,i=0;
         NumberFormat nf = NumberFormat.getInstance();
 
@@ -148,25 +90,5 @@ public class SimpleBeamCLAP extends AppCompatActivity {
     private double equation8(double P, double a, double x, double l, double E, double I){
         return (((P*a*(l-x))/(6*E*I*l))*(2*l*x-x*x-a*a)); //(Pa(l-x)/6EI*l)*(2*l*x-x^2-a^2)
     }
-
-    private void showKeyboard(View view){
-        view.requestFocus();
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
-        //this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
-    }
-
-    public static void hideKeyboard(Activity activity){
-        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
-        //Find the currently focused view, so we can grab the correct window token from it.
-        View view = activity.getCurrentFocus();
-        //If no view currently has focus, create a new one, just so we can grab a window token from it
-        if (view == null){
-            view = new View(activity);
-        }
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        view.clearFocus();
-    }
-
 
 }

@@ -42,6 +42,11 @@ public abstract class EquationSet extends AppCompatActivity
         activity = this;
     }
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+    }
+
     protected void setOnClickListeners(int cID, int eID, int iID){
         //Calculate button
         final Button calculateButton = findViewById(cID);
@@ -69,12 +74,6 @@ public abstract class EquationSet extends AppCompatActivity
                 startIFragment();
             }
         });
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        showKeyboard(findViewById(R.id.input_w));
     }
 
     @Override
@@ -107,7 +106,7 @@ public abstract class EquationSet extends AppCompatActivity
     }
 
     //Set focus and show keyboard
-    private void showKeyboard(View view){
+    protected void showKeyboard(View view){
         view.requestFocus();
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
