@@ -6,401 +6,396 @@
     android:layout_height="match_parent"
     tools:context="us.walkley.mw.engicalc.SimpleBeamUDL">
 
-
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:id="@+id/parentLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/background_light"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/input_LinearLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-            <!--w-->
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/constraintLayout_w"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:orientation="vertical"
+            android:elevation="4dp">
 
-                <TextView
-                    android:id="@+id/textView_w"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="w"
-                    android:textSize="26sp"
-                    android:fontFamily="cursive"
-                    android:textStyle="bold"
-                    app:layout_constraintBaseline_toBaselineOf="@id/textView_wEq"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView_wEq"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" = "
-                    android:textSize="22sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView_w"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <EditText
-                    android:id="@+id/input_w"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:elevation="8dp"
+                android:orientation="horizontal">
+                <!--w-->
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/constraintLayout_w"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:hint="weight"
-                    android:inputType="numberDecimal"
-                    android:nextFocusDown="@id/input_l"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_wEq"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView_wEq" />
+                    android:layout_weight="1">
 
-            </android.support.constraint.ConstraintLayout>
-            <!--l-->
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/constraintLayout_l"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/textView_w"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="cursive"
+                        android:text="w"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@id/textView_wEq"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textView_l"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="l "
-                    android:textSize="26sp"
-                    android:fontFamily="cursive"
-                    android:textStyle="bold"
-                    app:layout_constraintBaseline_toBaselineOf="@id/textView_lEq"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/textView_wEq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" = "
+                        android:textSize="22sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView_w"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textView_lEq"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="= "
-                    android:textSize="22sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView_l"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <EditText
+                        android:id="@+id/input_w"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:hint="weight"
+                        android:inputType="numberDecimal"
+                        android:nextFocusDown="@id/input_l"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/textView_wEq"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView_wEq" />
 
-                <EditText
-                    android:id="@+id/input_l"
+                </android.support.constraint.ConstraintLayout>
+                <!--l-->
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/constraintLayout_l"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:hint="length"
-                    android:inputType="numberDecimal"
-                    android:nextFocusDown="@id/input_x"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_lEq"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView_lEq" />
+                    android:layout_weight="1">
 
-            </android.support.constraint.ConstraintLayout>
-            <!--x-->
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/constraintLayout_x"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/textView_l"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="cursive"
+                        android:text="l "
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@id/textView_lEq"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textView_x"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="x"
-                    android:textSize="26sp"
-                    android:fontFamily="cursive"
-                    android:textStyle="bold"
-                    app:layout_constraintBaseline_toBaselineOf="@id/textView_xEq"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/textView_lEq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="= "
+                        android:textSize="22sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView_l"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textView_xEq"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" = "
-                    android:textSize="22sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView_x"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <EditText
+                        android:id="@+id/input_l"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:hint="length"
+                        android:inputType="numberDecimal"
+                        android:nextFocusDown="@id/input_x"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/textView_lEq"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView_lEq" />
 
-                <EditText
-                    android:id="@+id/input_x"
+                </android.support.constraint.ConstraintLayout>
+                <!--x-->
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/constraintLayout_x"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:hint="x"
-                    android:inputType="numberDecimal"
-                    android:nextFocusDown="@id/input_E"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_xEq"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/textView_x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="cursive"
+                        android:text="x"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@id/textView_xEq"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView_xEq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" = "
+                        android:textSize="22sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView_x"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/input_x"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:hint="x"
+                        android:inputType="numberDecimal"
+                        android:nextFocusDown="@id/input_E"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/textView_xEq"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView_xEq" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:elevation="8dp"
+                android:orientation="horizontal">
+                <!--E-->
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/constraintLayout_E"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/textView_E"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:text="E"
+                        android:textSize="26sp"
+                        android:typeface="serif"
+                        app:layout_constraintBaseline_toBaselineOf="@id/textView_EEq"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView_EEq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" = "
+                        android:textSize="22sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView_E"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/input_E"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:hint="Elasticity"
+                        android:inputType="numberDecimal"
+                        android:nextFocusDown="@id/input_i"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/textView_EEq"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView_EEq" />
+
+                    <android.support.v7.widget.AppCompatImageButton
+                        android:id="@+id/search_button_E"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_search_black_24dp"
+                        android:tint="@color/colorPrimaryLight"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </android.support.constraint.ConstraintLayout>
+                <!--I-->
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/constraintLayout_i"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/textView_i"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:text="I"
+                        android:textSize="26sp"
+                        android:typeface="serif"
+                        app:layout_constraintBaseline_toBaselineOf="@id/textView_iEq"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView_iEq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" = "
+                        android:textSize="22sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView_i"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/input_i"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:hint="I"
+                        android:inputType="numberDecimal"
+                        android:nextFocusDown="@id/calculate_button"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/textView_iEq"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView_iEq" />
+
+                    <android.support.v7.widget.AppCompatImageButton
+                        android:id="@+id/search_button_i"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_search_black_24dp"
+                        android:tint="@color/colorPrimaryLight"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </LinearLayout>
+            <!--Button-->
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:elevation="8dp">
+
+                <Button
+                    android:id="@+id/calculate_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calculate"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView_xEq" />
+                    app:layout_constraintStart_toStartOf="parent"/>
 
             </android.support.constraint.ConstraintLayout>
-
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-            <!--E-->
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/constraintLayout_E"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/textView_E"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif"
-                android:text="E"
-                android:textSize="26sp"
-                android:typeface="serif"
-                app:layout_constraintBaseline_toBaselineOf="@id/textView_EEq"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView_EEq"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" = "
-                android:textSize="22sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView_E"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/input_E"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:hint="Elasticity"
-                android:inputType="numberDecimal"
-                android:nextFocusDown="@id/input_i"
-                app:layout_constraintBaseline_toBaselineOf="@+id/textView_EEq"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView_EEq" />
-
-            <android.support.v7.widget.AppCompatImageButton
-                android:id="@+id/search_button_E"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:src="@drawable/ic_search_black_24dp"
-                android:layout_marginRight="3dp"
-                app:layout_constraintEnd_toEndOf="@id/input_E"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:tint="@color/colorPrimaryLight"
-                android:background="@android:color/transparent"/>
-
-
-            </android.support.constraint.ConstraintLayout>
-            <!--I-->
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/constraintLayout_i"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/textView_i"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="serif"
-                    android:text="I"
-                    android:textSize="26sp"
-                    android:typeface="serif"
-                    app:layout_constraintBaseline_toBaselineOf="@id/textView_iEq"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-
-                <TextView
-                    android:id="@+id/textView_iEq"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" = "
-                    android:textSize="22sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView_i"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <EditText
-                    android:id="@+id/input_i"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:hint="I"
-                    android:inputType="numberDecimal"
-                    android:nextFocusDown="@id/calculate_button"
-                    app:layout_constraintBaseline_toBaselineOf="@+id/textView_iEq"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView_iEq" />
-
-                <android.support.v7.widget.AppCompatImageButton
-                    android:id="@+id/search_button_i"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:src="@drawable/ic_search_black_24dp"
-                    android:layout_marginRight="3dp"
-                    app:layout_constraintEnd_toEndOf="@id/input_i"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:tint="@color/colorPrimaryLight"
-                    android:background="@android:color/transparent"/>
-
-            </android.support.constraint.ConstraintLayout>
-
-        </LinearLayout>
-        <!--Button-->
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="0px"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/calculate_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Calculate"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-        </android.support.constraint.ConstraintLayout>
 
         <!--Answers-->
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="0px"
-            android:layout_weight="6"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/input_LinearLayout">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="1">
+                android:layout_weight="6"
+                android:orientation="vertical">
 
-                <ImageView
-                    style="@style/AnswerImageView"
-                    android:src="@drawable/simplebeam_udl_equation1" />
+                <LinearLayout style="@style/AnswerLinearLayout">
 
-                <TextView
-                    android:id="@+id/answer1"
-                    style="@style/AnswerTextView" />
+                    <ImageView
+                        style="@style/AnswerImageView"
+                        android:src="@drawable/simplebeam_udl_equation1" />
+
+                    <TextView
+                        android:id="@+id/answer1"
+                        style="@style/AnswerTextView" />
+                </LinearLayout>
+
+                <View style="@style/HorizontalSeparator_1dp" />
+
+                <LinearLayout style="@style/AnswerLinearLayout">
+
+                    <ImageView
+                        style="@style/AnswerImageView"
+                        android:src="@drawable/simplebeam_udl_equation2" />
+
+                    <TextView
+                        android:id="@+id/answer2"
+                        style="@style/AnswerTextView" />
+                </LinearLayout>
+
+                <View style="@style/HorizontalSeparator_1dp" />
+
+                <LinearLayout
+                    style="@style/AnswerLinearLayout"
+                    android:tooltipText="@string/atcenter">
+
+                    <ImageView
+                        style="@style/AnswerImageView"
+                        android:src="@drawable/simplebeam_udl_equation3" />
+
+                    <TextView
+                        android:id="@+id/answer3"
+                        style="@style/AnswerTextView" />
+                </LinearLayout>
+
+                <View style="@style/HorizontalSeparator_1dp" />
+
+                <LinearLayout style="@style/AnswerLinearLayout">
+
+                    <ImageView
+                        style="@style/AnswerImageView"
+                        android:src="@drawable/simplebeam_udl_equation4" />
+
+                    <TextView
+                        android:id="@+id/answer4"
+                        style="@style/AnswerTextView" />
+                </LinearLayout>
+
+                <View style="@style/HorizontalSeparator_1dp" />
+
+                <LinearLayout
+                    style="@style/AnswerLinearLayout"
+                    android:tooltipText="@string/atcenter">
+
+                    <ImageView
+                        style="@style/AnswerImageView"
+                        android:src="@drawable/simplebeam_udl_equation5" />
+
+                    <TextView
+                        android:id="@+id/answer5"
+                        style="@style/AnswerTextView" />
+                </LinearLayout>
+
+                <View style="@style/HorizontalSeparator_1dp" />
+
+                <LinearLayout style="@style/AnswerLinearLayout">
+
+                    <ImageView
+                        style="@style/AnswerImageView"
+                        android:src="@drawable/simplebeam_udl_equation6" />
+
+                    <TextView
+                        android:id="@+id/answer6"
+                        style="@style/AnswerTextView" />
+                </LinearLayout>
+
             </LinearLayout>
+        </ScrollView>
 
-            <View style="@style/HorizontalSeparator_1dp" />
+    </android.support.constraint.ConstraintLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1">
 
-                <ImageView
-                    style="@style/AnswerImageView"
-                    android:src="@drawable/simplebeam_udl_equation2" />
-
-                <TextView
-                    android:id="@+id/answer2"
-                    style="@style/AnswerTextView" />
-            </LinearLayout>
-
-            <View style="@style/HorizontalSeparator_1dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1"
-                android:tooltipText="@string/atcenter">
-
-                <ImageView
-                    style="@style/AnswerImageView"
-                    android:src="@drawable/simplebeam_udl_equation3" />
-
-                <TextView
-                    android:id="@+id/answer3"
-                    style="@style/AnswerTextView" />
-            </LinearLayout>
-
-            <View style="@style/HorizontalSeparator_1dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1">
-
-                <ImageView
-                    style="@style/AnswerImageView"
-                    android:src="@drawable/simplebeam_udl_equation4" />
-
-                <TextView
-                    android:id="@+id/answer4"
-                    style="@style/AnswerTextView" />
-            </LinearLayout>
-
-            <View style="@style/HorizontalSeparator_1dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1"
-                android:tooltipText="@string/atcenter">
-
-                <ImageView
-                    style="@style/AnswerImageView"
-                    android:src="@drawable/simplebeam_udl_equation5" />
-
-                <TextView
-                    android:id="@+id/answer5"
-                    style="@style/AnswerTextView" />
-            </LinearLayout>
-
-            <View style="@style/HorizontalSeparator_1dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1">
-
-                <ImageView
-                    style="@style/AnswerImageView"
-                    android:src="@drawable/simplebeam_udl_equation6" />
-
-                <TextView
-                    android:id="@+id/answer6"
-                    style="@style/AnswerTextView" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <FrameLayout android:id="@+id/elasticityFragment_Frame"
+    <FrameLayout
+        android:id="@+id/elasticityFragment_Frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
-    <FrameLayout android:id="@+id/inertiaFragment_Frame"
+    <FrameLayout
+        android:id="@+id/inertiaFragment_Frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
 </android.support.constraint.ConstraintLayout>

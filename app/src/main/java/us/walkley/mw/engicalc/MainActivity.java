@@ -10,10 +10,9 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 //TODO: Rename app: EngiCalc, Calcineer, Engilator, Abdaraxus, Harpalus...
-//TODO: Make abstract class for calculation activities
-//TODO: Make fragment for I lookup
-//TODO: Update Elasticity Fragment to match I fragment
+//TODO: Update Elasticity Fragment to match I fragment?
 //TODO: Update Equation Set UI
+//TODO: Make x optional input
 //TODO: Import and complete Print functionality
 
 public class MainActivity extends AppCompatActivity {
