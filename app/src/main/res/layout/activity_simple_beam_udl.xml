@@ -385,7 +385,6 @@
 
     </android.support.constraint.ConstraintLayout>
 
-
     <FrameLayout
         android:id="@+id/elasticityFragment_Frame"
         android:layout_width="match_parent"

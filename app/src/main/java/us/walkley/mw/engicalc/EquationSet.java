@@ -26,7 +26,7 @@ public abstract class EquationSet extends AppCompatActivity
     private final static String EFRAG = "ElasticityFragment";
     private final static String IFRAG = "InertiaFragment";
 
-    EquationSet(){};
+    EquationSet(){}
 
     EquationSet (int layoutID){
         activityLayout = layoutID;
