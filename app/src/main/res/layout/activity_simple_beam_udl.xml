@@ -9,12 +9,12 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/parentLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/input_LinearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@android:color/background_light"
             android:orientation="vertical"
             android:elevation="4dp">
@@ -286,9 +286,20 @@
                     app:layout_constraintStart_toStartOf="parent"/>
 
             </android.support.constraint.ConstraintLayout>
+
+            <FrameLayout
+                android:id="@+id/answerFragment_Frame"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+            </FrameLayout>
+
         </LinearLayout>
 
+
+
         <!--Answers-->
+        <!--
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -382,7 +393,7 @@
 
             </LinearLayout>
         </ScrollView>
-
+        -->
     </android.support.constraint.ConstraintLayout>
 
     <FrameLayout

@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 
 public class SimpleBeamUDL extends EquationSet {
 
@@ -36,6 +37,7 @@ public class SimpleBeamUDL extends EquationSet {
 
     void calculateAll(View view){
         double w=0, l=0, x=0, e=0, i=0;
+        answerItemArrayList = new ArrayList<>();
         NumberFormat nf = NumberFormat.getInstance();
 
         try{
@@ -43,10 +45,18 @@ public class SimpleBeamUDL extends EquationSet {
             l = Double.valueOf(((EditText)findViewById(R.id.input_l)).getText().toString());
             x = Double.valueOf(((EditText)findViewById(R.id.input_x)).getText().toString());
 
+            answerItemArrayList.add(new AnswerItem(R.drawable.simplebeam_udl_equation1, nf.format(equation1(w,l))));
+            answerItemArrayList.add(new AnswerItem(R.drawable.simplebeam_udl_equation2, nf.format(equation2(w,l,x))));
+            answerItemArrayList.add(new AnswerItem(R.drawable.simplebeam_udl_equation3, nf.format(equation3(w,l,x))));
+            answerItemArrayList.add(new AnswerItem(R.drawable.simplebeam_udl_equation4, nf.format(equation4(w,l,x))));
+
+            /*
             ((TextView)findViewById(R.id.answer1)).setText(nf.format(equation1(w,l)));
             ((TextView)findViewById(R.id.answer2)).setText(nf.format(equation2(w,l,x)));
             ((TextView)findViewById(R.id.answer3)).setText(nf.format(equation3(w,l,x)));
             ((TextView)findViewById(R.id.answer4)).setText(nf.format(equation4(w,l,x)));
+            */
+
         }catch (IllegalStateException | NumberFormatException exc) {
             Toast.makeText(this, "Invalid input.", Toast.LENGTH_LONG).show();
         }
@@ -56,11 +66,18 @@ public class SimpleBeamUDL extends EquationSet {
             e = Double.valueOf(((EditText)findViewById(R.id.input_E)).getText().toString());
             double ei= e*i;
 
+            answerItemArrayList.add(new AnswerItem(R.drawable.simplebeam_udl_equation5, nf.format(equation5(w,l,x, ei))));
+            answerItemArrayList.add(new AnswerItem(R.drawable.simplebeam_udl_equation6, nf.format(equation6(w,l,x, ei))));
+
+        /*
             ((TextView)findViewById(R.id.answer5)).setText(nf.format(equation5(w,l,x,ei)));
             ((TextView)findViewById(R.id.answer6)).setText(nf.format(equation6(w,l,x,ei)));
+            */
         }catch (IllegalStateException | NumberFormatException exc) {
             Toast.makeText(this, "Invalid inputs for E and I.", Toast.LENGTH_LONG).show();
         }
+
+        startAnswerFragment();
 
         hideKeyboard(this);
 

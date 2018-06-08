@@ -2,18 +2,18 @@ package us.walkley.mw.engicalc;
 
 public class AnswerItem {
     private int mImgSrc;
-    private double mAnswer = 0;
+    private String mAnswer = "";
 
-    AnswerItem(int i, double d){
+    AnswerItem(int i, String s){
         mImgSrc = i;
-        mAnswer = d;
+        mAnswer = s;
     }
 
-    public double getAnswer() {
+    public String getAnswer() {
         return mAnswer;
     }
-    public void setAnswer(double d) {
-        mAnswer = d;
+    public void setAnswer(String s) {
+        mAnswer = s;
     }
     public int getImgSrc() {
         return mImgSrc;

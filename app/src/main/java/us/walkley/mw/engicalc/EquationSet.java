@@ -13,6 +13,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+
 /**
  * Created by michael_walkley on 5/3/2018.
  */
@@ -25,6 +27,8 @@ public abstract class EquationSet extends AppCompatActivity
     private static Activity activity;
     private final static String EFRAG = "ElasticityFragment";
     private final static String IFRAG = "InertiaFragment";
+    private final static String AFRAG = "AnswerFragment";
+    protected ArrayList<AnswerItem> answerItemArrayList;
 
     EquationSet(){}
 
@@ -163,5 +167,17 @@ public abstract class EquationSet extends AppCompatActivity
         inputView.setText(Double.toString(iVal.getEValue()));
         onBackPressed();
     }
+
+    //AnswerFragment
+    static void startAnswerFragment(){
+        hideKeyboard(activity);
+        //getSupportFragmentManager().beginTransaction().replace(R.id.frag_frame, new EValueListFragment()).commit();
+        FragmentManager manager = activity.getFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.answerFragment_Frame, new AnswerItemFragment(), AFRAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
 }
 

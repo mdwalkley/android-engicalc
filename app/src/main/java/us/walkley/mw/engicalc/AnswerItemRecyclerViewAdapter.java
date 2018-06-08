@@ -31,7 +31,7 @@ public class AnswerItemRecyclerViewAdapter extends RecyclerView.Adapter<AnswerIt
     public void onBindViewHolder(final ViewHolder holder, int position) {
         AnswerItem currentItem = mValues.get(position);
         holder.mImageView.setImageResource(currentItem.getImgSrc());
-        holder.mTextView.setText(Double.toString(currentItem.getAnswer()));
+        holder.mTextView.setText(currentItem.getAnswer());
     }
 
     @Override
