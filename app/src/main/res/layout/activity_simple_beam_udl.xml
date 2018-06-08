@@ -4,28 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackgroundDark"
     tools:context="us.walkley.mw.engicalc.SimpleBeamUDL">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/parentLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
 
         <LinearLayout
             android:id="@+id/input_LinearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/background_light"
+            android:background="@android:color/transparent"
             android:orientation="vertical"
             android:elevation="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:elevation="8dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@android:color/background_light">
                 <!--w-->
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/constraintLayout_w"
@@ -158,10 +161,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:elevation="8dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@android:color/background_light">
                 <!--E-->
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/constraintLayout_E"
@@ -275,7 +279,8 @@
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:elevation="8dp">
+                android:elevation="8dp"
+                android:background="@android:color/background_light">
 
                 <Button
                     android:id="@+id/calculate_button"
@@ -287,113 +292,17 @@
 
             </android.support.constraint.ConstraintLayout>
 
+            <!--Answers-->
             <FrameLayout
                 android:id="@+id/answerFragment_Frame"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:elevation="6dp">
             </FrameLayout>
 
         </LinearLayout>
 
-
-
-        <!--Answers-->
-        <!--
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/input_LinearLayout">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="6"
-                android:orientation="vertical">
-
-                <LinearLayout style="@style/AnswerLinearLayout">
-
-                    <ImageView
-                        style="@style/AnswerImageView"
-                        android:src="@drawable/simplebeam_udl_equation1" />
-
-                    <TextView
-                        android:id="@+id/answer1"
-                        style="@style/AnswerTextView" />
-                </LinearLayout>
-
-                <View style="@style/HorizontalSeparator_1dp" />
-
-                <LinearLayout style="@style/AnswerLinearLayout">
-
-                    <ImageView
-                        style="@style/AnswerImageView"
-                        android:src="@drawable/simplebeam_udl_equation2" />
-
-                    <TextView
-                        android:id="@+id/answer2"
-                        style="@style/AnswerTextView" />
-                </LinearLayout>
-
-                <View style="@style/HorizontalSeparator_1dp" />
-
-                <LinearLayout
-                    style="@style/AnswerLinearLayout"
-                    android:tooltipText="@string/atcenter">
-
-                    <ImageView
-                        style="@style/AnswerImageView"
-                        android:src="@drawable/simplebeam_udl_equation3" />
-
-                    <TextView
-                        android:id="@+id/answer3"
-                        style="@style/AnswerTextView" />
-                </LinearLayout>
-
-                <View style="@style/HorizontalSeparator_1dp" />
-
-                <LinearLayout style="@style/AnswerLinearLayout">
-
-                    <ImageView
-                        style="@style/AnswerImageView"
-                        android:src="@drawable/simplebeam_udl_equation4" />
-
-                    <TextView
-                        android:id="@+id/answer4"
-                        style="@style/AnswerTextView" />
-                </LinearLayout>
-
-                <View style="@style/HorizontalSeparator_1dp" />
-
-                <LinearLayout
-                    style="@style/AnswerLinearLayout"
-                    android:tooltipText="@string/atcenter">
-
-                    <ImageView
-                        style="@style/AnswerImageView"
-                        android:src="@drawable/simplebeam_udl_equation5" />
-
-                    <TextView
-                        android:id="@+id/answer5"
-                        style="@style/AnswerTextView" />
-                </LinearLayout>
-
-                <View style="@style/HorizontalSeparator_1dp" />
-
-                <LinearLayout style="@style/AnswerLinearLayout">
-
-                    <ImageView
-                        style="@style/AnswerImageView"
-                        android:src="@drawable/simplebeam_udl_equation6" />
-
-                    <TextView
-                        android:id="@+id/answer6"
-                        style="@style/AnswerTextView" />
-                </LinearLayout>
-
-            </LinearLayout>
-        </ScrollView>
-        -->
     </android.support.constraint.ConstraintLayout>
 
     <FrameLayout

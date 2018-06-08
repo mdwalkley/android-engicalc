@@ -6,8 +6,11 @@
     android:name="us.walkley.mw.engicalc.AnswerItemFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:background="@android:color/background_light"
     app:layoutManager="android.support.v7.widget.LinearLayoutManager"
     tools:context=".AnswerItemFragment"
     tools:listitem="@layout/fragment_answeritem" />
